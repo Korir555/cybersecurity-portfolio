@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
-          cp -R assets projects _site/
+          cp -R assets projects downloads _site/
 
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3

@@ -27,6 +27,8 @@ A GitHub Pages portfolio showcasing hands-on penetration testing, ethical hackin
 │   ├── 04-linux-environment/
 │   ├── 05-wordpress-sqli/
 │   └── 06-dvwa-xss/
+├── downloads/
+│   └── Sanitized PDF case studies for each project
 ├── reports/
 └── .github/workflows/deploy.yml
 ```
@@ -49,4 +51,4 @@ All technical testing represented here was performed against intentionally vulne
 
 ## Source reports
 
-The original coursework reports used to prepare the project summaries are kept in `reports/` locally. They are deliberately excluded from Git and from the GitHub Pages deployment because they may contain coursework or lab details that should not be public.
+The original coursework reports used to prepare the project summaries are kept in `reports/` locally. They are deliberately excluded from Git and from the GitHub Pages deployment because they contain coursework and lab details that should not be public. Each project page links to a downloadable, sanitized PDF case study in `downloads/` instead.

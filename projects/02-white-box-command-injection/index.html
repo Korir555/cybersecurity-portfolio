@@ -14,7 +14,7 @@
 <h2>Security impact</h2><p>An attacker can execute operating-system commands with the privileges of the web-server process. The report identifies potential information disclosure, further compromise and lateral movement.</p>
 <h2>Recommendations</h2><ul><li>Replace shell execution with PHP native DNS functions such as dns_get_record() or checkdnsrr().</li><li>If a shell call is unavoidable, apply strict allowlisting and use escapeshellarg() as defense-in-depth.</li><li>Run the web service with least privilege.</li><li>HTML-escape command output before rendering it.</li></ul>
 <div class="notice"><strong>Lab scope:</strong> This case study describes coursework performed against intentionally vulnerable systems in an isolated environment.</div>
-<h2>Source report</h2><p>The source report explicitly classifies the issue as CWE-78 OS Command Injection.</p>
+<h2>Case study</h2><p><a class="btn secondary" href="../../downloads/02-command-injection-case-study.pdf" target="_blank" rel="noopener">Download sanitized case study (PDF)</a></p>
 <p><a class="btn secondary" href="../../">Return to portfolio</a></p>
 </div></section></main>
 <footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
