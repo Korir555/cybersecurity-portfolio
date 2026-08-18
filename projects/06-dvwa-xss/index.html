@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DVWA Reflected & Stored XSS Assessment | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<body>
+<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
+<main>
+<section class="hero"><div class="container narrow">
+<p class="eyebrow">06 / CLIENT-SIDE SECURITY</p><h1>DVWA Reflected & Stored XSS Assessment</h1><p class="hero-text">Tested deliberately vulnerable DVWA at Low security and confirmed reflected and stored cross-site scripting, then analyzed the security properties of session identifiers.</p>
+<div class="tags"><span>Nmap</span><span>DVWA</span><span>Browser DevTools</span><span>JavaScript</span><span>Hashcat</span></div>
+</div></section>
+<section class="section"><div class="container narrow">
+<h2>Lab environment</h2><p>Metasploitable2 (192.168.56.107), Ubuntu 24.04 Attackbox (192.168.56.104), VirtualBox Host-only network.</p>
+<h2>Assessment highlights</h2><ul><li>Located DVWA on the Metasploitable2 web root and configured its security level to Low for the exercise.</li><li>Reflected XSS was confirmed because supplied script content was echoed without output encoding.</li><li>Stored XSS persisted in server-side guestbook data and executed again when the page was revisited.</li><li>The captured session cookie demonstrated why session-cookie protections matter in an XSS scenario.</li><li>The report's controlled token experiment showed that predictable sequential identifiers can be recovered quickly, while the observed session identifier was not vulnerable to that specific dictionary technique.</li></ul>
+<h2>Security impact</h2><p>XSS can allow attacker-controlled JavaScript to execute in a victim's browser and can expose sensitive client-side data when appropriate cookie protections are absent.</p>
+<h2>Recommendations</h2><ul><li>Apply context-appropriate output encoding.</li><li>Use a Content-Security-Policy as defense-in-depth.</li><li>Set Secure and HttpOnly flags on session cookies.</li><li>Regenerate session IDs after authentication and enforce sensible timeouts.</li><li>Patch or decommission intentionally vulnerable legacy services.</li></ul>
+<div class="notice"><strong>Lab scope:</strong> This case study describes coursework performed against intentionally vulnerable systems in an isolated environment.</div>
+<h2>Source report</h2><p>The DVWA report documents reflected/stored XSS behavior and the session-management analysis.</p>
+<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
+</div></section></main>
+<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
+</body></html>

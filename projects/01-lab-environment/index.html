@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Penetration Testing Lab Environment | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<body>
+<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
+<main>
+<section class="hero"><div class="container narrow">
+<p class="eyebrow">01 / LAB SETUP & RECONNAISSANCE</p><h1>Penetration Testing Lab Environment</h1><p class="hero-text">Built an isolated VirtualBox penetration-testing environment and verified attacker-to-target connectivity before beginning application testing.</p>
+<div class="tags"><span>VirtualBox</span><span>Nmap</span><span>Ncat</span><span>Gobuster</span><span>Ubuntu Linux</span></div>
+</div></section>
+<section class="section"><div class="container narrow">
+<h2>Lab environment</h2><p>Ubuntu 24.04 Attackbox (192.168.56.104), EH vulnerable machine (192.168.56.105), macOS host, VirtualBox Host-only network vboxnet0 / 192.168.56.0/24.</p>
+<h2>Assessment highlights</h2><ul><li>Configured NAT for guest internet access and Host-only networking for isolated attacker-target communication.</li><li>Used Nmap service discovery to confirm the target was reachable and identify its web-facing service.</li><li>Installed Nmap, Ncat and Gobuster on the attacker machine.</li><li>Enumerated the target web root and identified the maintenance application plus additional web directories.</li></ul>
+<h2>Security impact</h2><p>The lab provided a controlled environment for subsequent white-box, black-box and Linux security assessments.</p>
+<h2>Recommendations</h2><ul><li>Keep vulnerable targets isolated from production networks.</li><li>Use separate attacker and target interfaces when the lab requires controlled internet access.</li><li>Document IP addressing, interfaces and scan results before exploitation.</li></ul>
+<div class="notice"><strong>Lab scope:</strong> This case study describes coursework performed against intentionally vulnerable systems in an isolated environment.</div>
+<h2>Source report</h2><p>The lab report documents the dual-adapter configuration and the initial Nmap scan. </p>
+<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
+</div></section></main>
+<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
+</body></html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Linux Environment & Credential Discovery | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<body>
+<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
+<main>
+<section class="hero"><div class="container narrow">
+<p class="eyebrow">04 / LINUX SECURITY REVIEW</p><h1>Linux Environment & Credential Discovery</h1><p class="hero-text">Used an interactive Linux shell to profile the compromised target, inspect system information and locate sensitive WordPress configuration data.</p>
+<div class="tags"><span>Bash</span><span>pwd</span><span>cd</span><span>echo</span><span>uname</span><span>whoami</span><span>id</span><span>ps</span><span>free</span><span>df</span><span>ip</span><span>find</span></div>
+</div></section>
+<section class="section"><div class="container narrow">
+<h2>Lab environment</h2><p>EH vulnerable machine (192.168.56.105), Ubuntu 24.04 Attackbox (192.168.56.104).</p>
+<h2>Assessment highlights</h2><ul><li>Confirmed bash as the interactive shell and reviewed PATH and filesystem navigation.</li><li>Collected kernel, user, process, memory, disk and network information.</li><li>Located /var/www/html/blog/wp-config.php using find.</li><li>The configuration file contained live database credentials in plaintext.</li><li>The report also notes that WordPress secret keys and salts stored in the same file should be rotated.</li></ul>
+<h2>Security impact</h2><p>Sensitive configuration files can expose credentials and application secrets when filesystem permissions and application isolation are weak.</p>
+<h2>Recommendations</h2><ul><li>Protect configuration files with restrictive permissions.</li><li>Avoid storing plaintext secrets where possible and use secure secret management.</li><li>Rotate exposed credentials and WordPress salts/keys after an incident.</li><li>Run application processes with the minimum required privileges.</li></ul>
+<div class="notice"><strong>Lab scope:</strong> This case study describes coursework performed against intentionally vulnerable systems in an isolated environment.</div>
+<h2>Source report</h2><p>The Linux report records the system-information commands and configuration-file discovery process.</p>
+<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
+</div></section></main>
+<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
+</body></html>

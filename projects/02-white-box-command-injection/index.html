@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>White-Box Testing: OS Command Injection | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<body>
+<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
+<main>
+<section class="hero"><div class="container narrow">
+<p class="eyebrow">02 / SOURCE CODE REVIEW</p><h1>White-Box Testing: OS Command Injection</h1><p class="hero-text">Reviewed the DNS Lookup Utility source code with full visibility and identified an unauthenticated OS command injection vulnerability caused by unsanitized input reaching shell_exec().</p>
+<div class="tags"><span>PHP</span><span>Source Code Review</span><span>OWASP/CWE classification</span><span>Secure Coding</span></div>
+</div></section>
+<section class="section"><div class="container narrow">
+<h2>Lab environment</h2><p>EH vulnerable machine, Ubuntu 24.04 Attackbox, VirtualBox Host-only network.</p>
+<h2>Assessment highlights</h2><ul><li>The form submits a user-controlled command parameter to script.php.</li><li>The backend concatenates the parameter directly into shell_exec("nslookup $command").</li><li>Shell metacharacters can therefore be interpreted as commands rather than treated as domain-name data.</li><li>The application also lacks authentication/authorization checks and output encoding.</li></ul>
+<h2>Security impact</h2><p>An attacker can execute operating-system commands with the privileges of the web-server process. The report identifies potential information disclosure, further compromise and lateral movement.</p>
+<h2>Recommendations</h2><ul><li>Replace shell execution with PHP native DNS functions such as dns_get_record() or checkdnsrr().</li><li>If a shell call is unavoidable, apply strict allowlisting and use escapeshellarg() as defense-in-depth.</li><li>Run the web service with least privilege.</li><li>HTML-escape command output before rendering it.</li></ul>
+<div class="notice"><strong>Lab scope:</strong> This case study describes coursework performed against intentionally vulnerable systems in an isolated environment.</div>
+<h2>Source report</h2><p>The source report explicitly classifies the issue as CWE-78 OS Command Injection.</p>
+<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
+</div></section></main>
+<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
+</body></html>

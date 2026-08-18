@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cybersecurity portfolio showcasing penetration testing, web security and ethical hacking projects.">
+  <title>Cybersecurity Portfolio | Emmanuel Kibet Korir</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="#home">EK<span>.</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">CYBERSECURITY • ETHICAL HACKING • WEB SECURITY</p>
+      <h1>Security testing with a <span>defensive mindset.</span></h1>
+      <p class="hero-text">A practical portfolio of penetration-testing and web-security labs covering reconnaissance, vulnerability discovery, exploitation validation and remediation.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">Explore projects</a>
+        <a class="btn secondary" href="https://github.com/Korir555" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="terminal">
+      <div class="terminal-bar"><i></i><i></i><i></i><span>security-lab</span></div>
+      <pre><code>$ nmap -sV target
+$ gobuster dir -u target
+$ wpscan --url target
+$ identify vulnerability
+$ document impact
+$ recommend remediation
+
+<span class="ok">assessment complete</span></code></pre>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container narrow">
+    <p class="eyebrow">ABOUT</p>
+    <h2>Hands-on cybersecurity work</h2>
+    <p>This portfolio presents coursework-based security assessments performed in deliberately vulnerable, isolated lab environments. The work spans network reconnaissance, source-code review, web enumeration, command injection, SQL injection, XSS, Linux analysis and security hardening.</p>
+    <p>The emphasis is on understanding how vulnerabilities arise, demonstrating their impact safely, and translating findings into practical defensive recommendations.</p>
+  </div>
+</section>
+
+<section id="skills" class="section alt">
+  <div class="container">
+    <p class="eyebrow">SKILLS & TOOLS</p>
+    <h2>Security toolkit</h2>
+    <div class="skill-grid">
+      <span>Nmap</span><span>Gobuster</span><span>Ncat</span><span>WPScan</span>
+      <span>Nikto</span><span>Hashcat</span><span>John the Ripper</span><span>Linux</span>
+      <span>VirtualBox</span><span>WordPress</span><span>DVWA</span><span>Web Security</span>
+      <span>Reconnaissance</span><span>Source Code Review</span><span>Vulnerability Assessment</span><span>Remediation</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div><p class="eyebrow">PROJECTS</p><h2>Security assessments</h2></div>
+      <span class="project-count">06 PROJECTS</span>
+    </div>
+    <div class="project-grid">
+      <article class="card"><div class="card-number">01</div><h3>Penetration Testing Lab</h3><p>Built an isolated VirtualBox attacker/target environment and performed initial network reconnaissance.</p><div class="tags"><span>Nmap</span><span>VirtualBox</span><span>Linux</span></div><a href="projects/01-lab-environment/">View case study →</a></article>
+      <article class="card"><div class="card-number">02</div><h3>White-Box Command Injection</h3><p>Reviewed DNS Lookup Utility source code and identified an unauthenticated OS command injection vulnerability.</p><div class="tags"><span>PHP</span><span>CWE-78</span><span>Code Review</span></div><a href="projects/02-white-box-command-injection/">View case study →</a></article>
+      <article class="card"><div class="card-number">03</div><h3>Black-Box Testing</h3><p>Performed reconnaissance, directory enumeration and controlled command-injection validation against a lab target.</p><div class="tags"><span>Nmap</span><span>Gobuster</span><span>Web</span></div><a href="projects/03-black-box-testing/">View case study →</a></article>
+      <article class="card"><div class="card-number">04</div><h3>Linux Environment Review</h3><p>Used Linux shell commands to profile the target and locate sensitive WordPress configuration data.</p><div class="tags"><span>Bash</span><span>Linux</span><span>Forensics</span></div><a href="projects/04-linux-environment/">View case study →</a></article>
+      <article class="card"><div class="card-number">05</div><h3>WordPress SQL Injection</h3><p>Assessed a vulnerable WordPress plugin REST API and demonstrated SQL injection leading to credential recovery and admin access.</p><div class="tags"><span>WPScan</span><span>SQLi</span><span>Hashcat</span></div><a href="projects/05-wordpress-sqli/">View case study →</a></article>
+      <article class="card"><div class="card-number">06</div><h3>DVWA XSS Assessment</h3><p>Demonstrated reflected and stored XSS and analyzed session-token security in a deliberately vulnerable application.</p><div class="tags"><span>DVWA</span><span>XSS</span><span>Sessions</span></div><a href="projects/06-dvwa-xss/">View case study →</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section alt">
+  <div class="container narrow contact">
+    <p class="eyebrow">CONTACT</p>
+    <h2>Let's connect</h2>
+    <p>Open to professional connections and cybersecurity opportunities. Get in touch through email or connect with me online.</p>
+    <div class="contact-links">
+      <a href="https://github.com/Korir555" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="mailto:ekorir555@gmail.com">Email ↗</a>
+      <a href="https://www.linkedin.com/in/emmanuel-korir-a98b32229/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Built for GitHub Pages</span></div></footer>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WordPress SQL Injection via REST API | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<body>
+<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
+<main>
+<section class="hero"><div class="container narrow">
+<p class="eyebrow">05 / WEB APPLICATION SECURITY</p><h1>WordPress SQL Injection via REST API</h1><p class="hero-text">Assessed a deliberately vulnerable WordPress installation and confirmed unauthenticated SQL injection in the wp-google-maps REST API, followed by database enumeration and credential recovery.</p>
+<div class="tags"><span>Nmap</span><span>Nikto</span><span>WPScan</span><span>REST API testing</span><span>Hashcat</span><span>WordPress</span></div>
+</div></section>
+<section class="section"><div class="container narrow">
+<h2>Lab environment</h2><p>HF2019-Linux vulnerable machine (192.168.56.106), Ubuntu 24.04 Attackbox (192.168.56.104), Host-only vboxnet0.</p>
+<h2>Assessment highlights</h2><ul><li>Enumerated FTP, SSH, HTTP and Webmin services.</li><li>Nikto and WPScan confirmed WordPress and the wp-google-maps plugin.</li><li>Boolean tests using the REST API demonstrated that the fields parameter was being incorporated into SQL.</li><li>Database and WordPress table information was enumerated through the vulnerable endpoint.</li><li>A WordPress administrator password hash was recovered and cracked in the lab, leading to confirmed administrator access.</li></ul>
+<h2>Security impact</h2><p>The report demonstrates how an unauthenticated SQL injection can progress from data disclosure to credential compromise and application administrator access.</p>
+<h2>Recommendations</h2><ul><li>Update or remove the vulnerable plugin.</li><li>Use parameterized/prepared SQL queries.</li><li>Strictly allowlist fields accepted by REST API parameters.</li><li>Require authentication where public access is unnecessary.</li><li>Enforce strong passwords and modern password hashing.</li><li>Monitor REST API requests for SQL-injection patterns.</li></ul>
+<div class="notice"><strong>Lab scope:</strong> This case study describes coursework performed against intentionally vulnerable systems in an isolated environment.</div>
+<h2>Source report</h2><p>The SQLi report documents the REST API vulnerability, database enumeration, password-hash recovery and administrator-access confirmation.</p>
+<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
+</div></section></main>
+<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
+</body></html>

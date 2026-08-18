@@ -1,0 +1,8 @@
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Original coursework reports may contain lab details; keep them local unless
+# you have reviewed and intentionally want to publish them.
+reports/
