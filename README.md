@@ -17,6 +17,9 @@ A GitHub Pages portfolio showcasing hands-on penetration testing, ethical hackin
 8. **Phishing Email Detection Model** — Scikit-learn supervised classifier with feature engineering, cross-validation, and explainability for identifying phishing campaigns.
 9. **Network Enumeration Lab** — Kali Linux reconnaissance against Metasploitable2 using Nmap, enum4linux, and SNMP enumeration to discover attack surface.
 
+### Security Tooling
+10. **Professional Port Scanner** — Full-stack Flask + React network reconnaissance tool with parallel TCP scanning, service detection, CVE correlation, and real-time dashboard.
+
 ## Repository structure
 
 ```text
@@ -35,7 +38,8 @@ A GitHub Pages portfolio showcasing hands-on penetration testing, ethical hackin
 │   ├── 06-dvwa-xss/
 │   ├── 07-incident-response-simulator/
 │   ├── 08-phishing-detection-model/
-│   └── 09-network-enumeration-lab/
+│   ├── 09-network-enumeration-lab/
+│   └── 10-port-scanner/
 ├── downloads/
 │   └── Sanitized PDF case studies for each project
 ├── reports/

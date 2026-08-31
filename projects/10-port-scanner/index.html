@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Port Scanner | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<body>
+<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
+<main>
+<section class="hero"><div class="container narrow">
+<p class="eyebrow">10 / SECURITY TOOLING</p><h1>Professional Port Scanner</h1><p class="hero-text">Full-stack network reconnaissance tool built with Flask and React—performs rapid TCP scanning, service enumeration, and CVE correlation with real-time UI and export capabilities.</p>
+<div class="tags"><span>Flask</span><span>React</span><span>Socket Programming</span><span>Network Security</span></div>
+</div></section>
+<section class="section"><div class="container narrow">
+<h2>Project overview</h2><p>A professional-grade network scanner demonstrating full-stack security tooling development. Combines backend socket programming, concurrent processing, vulnerability intelligence, and a polished frontend UI—the type of tool used by security teams in real-world engagements.</p>
+<h2>Architecture & features</h2><h3>Backend (Flask REST API)</h3><ul>
+<li><strong>Parallel port scanning:</strong> 50 concurrent threads for rapid enumeration of 1-1000 port ranges.</li>
+<li><strong>TCP connection-based detection:</strong> Establishes connections to confirm open ports; faster than Nmap for quick assessments.</li>
+<li><strong>Service detection:</strong> Identifies 15+ common services (SSH, HTTP, MySQL, SMB, PostgreSQL, RDP, VNC, etc.) by port mapping and banner grabbing.</li>
+<li><strong>Version extraction:</strong> Retrieves service banners to determine software versions and patch levels.</li>
+<li><strong>CVE correlation:</strong> Maps detected services to known vulnerabilities (CVE database); assigns risk scores (High/Medium/Low).</li>
+<li><strong>Timeout configuration:</strong> Adjustable per-port timeout (1-10 seconds) for reliable scanning across network conditions.</li>
+</ul>
+<h3>Frontend (React SPA)</h3><ul>
+<li><strong>Real-time dashboard:</strong> Live progress updates and dynamic results table.</li>
+<li><strong>Dark terminal aesthetic:</strong> Glowing UI matching professional SOC environments.</li>
+<li><strong>Responsive design:</strong> Adapts to desktop, tablet, and mobile.</li>
+<li><strong>Export capabilities:</strong> Download results as JSON or CSV for further analysis or reporting.</li>
+<li><strong>Statistics panel:</strong> Summary counts of open, closed, and filtered ports with vulnerability highlights.</li>
+</ul>
+<h2>Technical highlights</h2><p><strong>Concurrency:</strong> ThreadPoolExecutor with 50 worker threads balances speed against system resource consumption and network politeness.</p>
+<p><strong>Error handling:</strong> Graceful degradation for filtered ports, timeouts, and connection errors; scan continues even if individual ports fail.</p>
+<p><strong>API design:</strong> RESTful endpoints for scanning, validation, and CVE lookups; extensible for future integration with external threat feeds.</p>
+<p><strong>Performance:</strong> 1-1000 port scan completes in 30-60 seconds; optimized for common port ranges (1-100, 1-65535 supported).</p>
+<h2>Use cases</h2><ul>
+<li>Network asset discovery and inventory during security audits.</li>
+<li>Vulnerability assessment as part of authorized penetration testing.</li>
+<li>Internal network reconnaissance during incident response.</li>
+<li>Security team training on reconnaissance workflows and attack surface analysis.</li>
+<li>Demonstration of custom security tooling capability for portfolio/job interviews.</li>
+</ul>
+<h2>Responsible use</h2><p>This tool is intended for authorized testing on systems you own or have explicit permission to test. Unauthorized network scanning may violate laws in your jurisdiction. Always obtain written authorization before scanning any external network or third-party infrastructure.</p>
+<h2>Limitations & future work</h2><p><strong>Current:</strong> TCP port scanning, local CVE database, no authentication support.</p>
+<p><strong>Future enhancements:</strong> UDP scanning, OS fingerprinting, Nmap integration, real-time NVD API queries, scheduled scanning, persistent results database, Docker deployment.</p>
+<div class="notice"><strong>Status:</strong> Production-ready for authorized security assessments. Open-source; contributions and feedback welcome.</div>
+<h2>Code and deployment</h2><p><a class="btn secondary" href="https://github.com/Korir555/port-scanner" target="_blank" rel="noopener">View on GitHub</a></p>
+<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
+</div></section></main>
+<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
+</body></html>
