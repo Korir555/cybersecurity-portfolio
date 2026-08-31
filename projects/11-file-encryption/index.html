@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>File Encryption Tool | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<body>
+<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
+<main>
+<section class="hero"><div class="container narrow">
+<p class="eyebrow">11 / CRYPTOGRAPHY</p><h1>Hybrid File Encryption Tool</h1><p class="hero-text">Production-grade file encryption with AES-256-GCM and RSA hybrid cryptography, HMAC integrity verification, secure key management, and professional UI. Built with Flask and React.</p>
+<div class="tags"><span>Cryptography</span><span>AES-256</span><span>RSA</span><span>Flask</span><span>React</span></div>
+</div></section>
+<section class="section"><div class="container narrow">
+<h2>Project overview</h2><p>A professional-grade file encryption and decryption application demonstrating deep knowledge of cryptographic systems and secure software design. Combines password-based symmetric encryption with RSA public-key cryptography for flexible, real-world security scenarios.</p>
+<h2>Cryptographic design</h2><h3>AES-256-GCM (Password-Based)</h3><ul>
+<li><strong>Symmetric encryption:</strong> Advanced Encryption Standard with 256-bit keys for strong, fast file protection.</li>
+<li><strong>Galois/Counter Mode (GCM):</strong> Authenticated encryption that prevents tampering—no separate MAC needed.</li>
+<li><strong>PBKDF2 key derivation:</strong> 100,000 iterations of PBKDF2-HMAC-SHA256 to harden passwords against brute-force attacks.</li>
+<li><strong>Random nonce generation:</strong> 96-bit cryptographically-secure random nonces for GCM mode.</li>
+<li><strong>Defense-in-depth:</strong> Additional HMAC-SHA256 verification for redundant integrity checking.</li>
+</ul>
+<h3>RSA Hybrid Encryption</h3><ul>
+<li><strong>Key exchange:</strong> RSA (2048/3072/4096-bit) encrypts ephemeral AES keys for secure multi-party file sharing.</li>
+<li><strong>Bulk encryption:</strong> AES-256-GCM handles large files efficiently; only the AES key is encrypted with RSA.</li>
+<li><strong>OAEP padding:</strong> Optimal Asymmetric Encryption Padding with SHA-256 for robust RSA security.</li>
+<li><strong>Key management:</strong> Generate, store, and manage RSA keypairs with PEM serialization.</li>
+<li><strong>Use case:</strong> Share encrypted files securely even over insecure channels—only the holder of the private key can decrypt.</li>
+</ul>
+<h2>Security features</h2><ul>
+<li><strong>Authenticated encryption:</strong> GCM mode prevents bit-flipping and tampering attacks.</li>
+<li><strong>Constant-time comparison:</strong> HMAC verification uses constant-time functions to prevent timing attacks.</li>
+<li><strong>Secure randomness:</strong> Cryptographically-secure random generation for salts and nonces.</li>
+<li><strong>Industry algorithms:</strong> NIST-approved AES, PBKDF2, RSA, and HMAC.</li>
+<li><strong>Iteration hardening:</strong> 100,000 PBKDF2 iterations (NIST SP 800-132 recommended).</li>
+<li><strong>Salt isolation:</strong> Unique salt per encryption prevents rainbow table attacks.</li>
+</ul>
+<h2>Technical implementation</h2><p><strong>Cryptography Module (`crypto.py`):</strong> Core encryption/decryption logic using the `cryptography` library (industry-standard Python wrapper around OpenSSL).</p>
+<p><strong>Flask REST API:</strong> Endpoints for password-based and hybrid encryption, key generation, and key management. Stateless design for scalability.</p>
+<p><strong>React UI:</strong> Dark terminal aesthetic, tabbed interface for encrypt/decrypt workflows, key visualization, and download/copy functionality.</p>
+<p><strong>API Design:</strong> RESTful architecture with JSON payloads containing encrypted data, metadata (timestamps, filenames), and cryptographic artifacts (salt, nonce, tag).</p>
+<h2>Supported operations</h2><ul>
+<li><strong>Password encryption:</strong> File → AES-256-GCM (password-derived key) → JSON output</li>
+<li><strong>Password decryption:</strong> JSON input + password → AES-256-GCM decryption → Original file</li>
+<li><strong>RSA key generation:</strong> Generate 2048/3072/4096-bit keypairs on-demand</li>
+<li><strong>Hybrid encryption:</strong> File → AES-256-GCM + RSA-encrypted key → JSON output</li>
+<li><strong>Hybrid decryption:</strong> JSON + private key → Recover AES key → Decrypt file</li>
+<li><strong>Key management:</strong> Store, list, retrieve, and delete RSA keys</li>
+</ul>
+<h2>Use cases</h2><ul>
+<li><strong>Personal data protection:</strong> Encrypt sensitive documents at rest before cloud storage.</li>
+<li><strong>Secure file sharing:</strong> Exchange encrypted files over insecure channels (email, Slack, etc.).</li>
+<li><strong>Compliance:</strong> Meet GDPR, HIPAA, PCI-DSS requirements for data encryption.</li>
+<li><strong>Zero-trust workflows:</strong> Encrypt data before uploading to untrusted services.</li>
+<li><strong>Backup security:</strong> Protect backups end-to-end before archival.</li>
+<li><strong>Multi-party exchange:</strong> RSA key infrastructure for secure distribution networks.</li>
+</ul>
+<h2>Performance characteristics</h2><ul>
+<li><strong>AES-256 encryption:</strong> ~100-500 MB/s (CPU-dependent)</li>
+<li><strong>RSA key generation:</strong> ~0.5s (2048-bit), ~2-3s (4096-bit)</li>
+<li><strong>PBKDF2 derivation:</strong> ~100ms per password (intentionally slow for security)</li>
+<li><strong>File processing:</strong> In-memory; limited by available RAM</li>
+</ul>
+<h2>Cryptographic specifications</h2><p><strong>AES-256-GCM:</strong> 256-bit key, 96-bit nonce, 128-bit authentication tag.</p>
+<p><strong>PBKDF2:</strong> 100,000 iterations, SHA-256 hash, 16-byte salt.</p>
+<p><strong>RSA:</strong> 2048/3072/4096-bit keys, OAEP padding, MGF1-SHA256.</p>
+<p><strong>HMAC:</strong> HMAC-SHA256 for additional integrity verification.</p>
+<div class="notice"><strong>Production readiness:</strong> Code follows cryptographic best practices; suitable for real-world deployment with proper key management infrastructure. In-memory key storage shown as demo; production systems should use hardware security modules (HSM) or secure enclaves.</div>
+<h2>Code and documentation</h2><p><a class="btn secondary" href="https://github.com/Korir555/file-encryption" target="_blank" rel="noopener">View on GitHub</a></p>
+<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
+</div></section></main>
+<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
+</body></html>

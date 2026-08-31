@@ -19,6 +19,7 @@ A GitHub Pages portfolio showcasing hands-on penetration testing, ethical hackin
 
 ### Security Tooling
 10. **Professional Port Scanner** — Full-stack Flask + React network reconnaissance tool with parallel TCP scanning, service detection, CVE correlation, and real-time dashboard.
+11. **Hybrid File Encryption Tool** — Production-grade cryptography application with AES-256-GCM and RSA encryption, HMAC integrity verification, and secure key management.
 
 ## Repository structure
 
@@ -39,7 +40,8 @@ A GitHub Pages portfolio showcasing hands-on penetration testing, ethical hackin
 │   ├── 07-incident-response-simulator/
 │   ├── 08-phishing-detection-model/
 │   ├── 09-network-enumeration-lab/
-│   └── 10-port-scanner/
+│   ├── 10-port-scanner/
+│   └── 11-file-encryption/
 ├── downloads/
 │   └── Sanitized PDF case studies for each project
 ├── reports/
