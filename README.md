@@ -4,12 +4,18 @@ A GitHub Pages portfolio showcasing hands-on penetration testing, ethical hackin
 
 ## Featured projects
 
+### Penetration Testing & Web Security
 1. **Penetration Testing Lab Environment** — VirtualBox, Ubuntu 24.04 Attackbox, host-only networking, Nmap, Ncat and Gobuster.
 2. **White-Box Testing: OS Command Injection** — source-code review of a DNS Lookup Utility and identification of CWE-78 command injection.
 3. **Black-Box Testing** — network/service enumeration, web enumeration, command injection and reverse-shell validation in an isolated lab.
 4. **Linux Environment Review** — shell navigation, system information gathering and configuration-file credential discovery.
 5. **WordPress SQL Injection** — wp-google-maps REST API SQL injection, database enumeration, password-hash recovery and administrator access in a deliberately vulnerable lab.
 6. **DVWA XSS & Session Security** — reflected/stored XSS and analysis of session-token security on Metasploitable2/DVWA.
+
+### Incident Response & Threat Detection
+7. **SOC Incident Response Simulator** — React + Node.js full-stack application with 30+ MITRE ATT&CK-tagged incident scenarios, alert triage, scoring engine, and leaderboard.
+8. **Phishing Email Detection Model** — Scikit-learn supervised classifier with feature engineering, cross-validation, and explainability for identifying phishing campaigns.
+9. **Network Enumeration Lab** — Kali Linux reconnaissance against Metasploitable2 using Nmap, enum4linux, and SNMP enumeration to discover attack surface.
 
 ## Repository structure
 
@@ -26,7 +32,10 @@ A GitHub Pages portfolio showcasing hands-on penetration testing, ethical hackin
 │   ├── 03-black-box-testing/
 │   ├── 04-linux-environment/
 │   ├── 05-wordpress-sqli/
-│   └── 06-dvwa-xss/
+│   ├── 06-dvwa-xss/
+│   ├── 07-incident-response-simulator/
+│   ├── 08-phishing-detection-model/
+│   └── 09-network-enumeration-lab/
 ├── downloads/
 │   └── Sanitized PDF case studies for each project
 ├── reports/

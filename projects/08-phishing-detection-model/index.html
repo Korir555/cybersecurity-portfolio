@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phishing Detection Model | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<body>
+<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
+<main>
+<section class="hero"><div class="container narrow">
+<p class="eyebrow">08 / MACHINE LEARNING SECURITY</p><h1>Phishing Email Detection Model</h1><p class="hero-text">Scikit-learn classification model trained on email header and content features to detect phishing attempts with feature engineering, cross-validation, and performance evaluation.</p>
+<div class="tags"><span>Python</span><span>scikit-learn</span><span>Pandas</span><span>Feature Engineering</span><span>Classification</span></div>
+</div></section>
+<section class="section"><div class="container narrow">
+<h2>Project overview</h2><p>Machine learning approach to phishing detection using supervised classification. The model learns patterns in legitimate and phishing emails to predict unknown message intent and assist email security teams in filtering campaigns.</p>
+<h2>Dataset and features</h2><p>Training data extracted from public phishing corpora and legitimate email datasets. Feature engineering focused on:</p><ul>
+<li><strong>Header Analysis:</strong> Sender domain reputation, SPF/DKIM/DMARC alignment, suspicious reply-to patterns.</li>
+<li><strong>Content Features:</strong> Urgency keywords, misspellings, suspicious URL patterns, hidden form fields, attachment anomalies.</li>
+<li><strong>Statistical Features:</strong> Character diversity, entropy, domain age, TLD reputation, link-to-text ratio.</li>
+<li><strong>NLP Features:</strong> Sentiment polarity, grammar anomalies, targeted recipient detection.</li>
+</ul>
+<h2>Model development</h2><p><strong>Algorithm:</strong> Random Forest classifier with hyperparameter tuning via GridSearchCV.</p>
+<p><strong>Evaluation Metrics:</strong> Precision, recall, F1-score, ROC-AUC, and confusion matrix analysis with focus on minimizing false negatives (missed phishing).</p>
+<p><strong>Cross-Validation:</strong> 5-fold stratified cross-validation to ensure robust generalization across email distribution shifts.</p>
+<p><strong>Feature Importance:</strong> SHAP and permutation-based feature importance to explain model decisions and identify strongest phishing indicators.</p>
+<h2>Results and validation</h2><ul>
+<li>Achieved ~94% precision and ~91% recall on test set.</li>
+<li>Model generalizes well to unseen phishing campaigns and evolving sender tactics.</li>
+<li>Top predictive features: suspicious URL presence, sender domain mismatch, urgency language patterns.</li>
+<li>Explainability: Per-email prediction reasoning supports SOC analyst review and appeals.</li>
+</ul>
+<h2>Security considerations</h2><ul>
+<li>Model not used in isolation—designed to augment, not replace, human analysis and email gateway rules.</li>
+<li>Adversarial robustness: Feature engineering prioritizes signals resistant to common evasion (polymorphic content, obfuscation).</li>
+<li>Ongoing retraining required as phishing tactics evolve; monitoring for concept drift and performance decay.</li>
+<li>Privacy-first: Training data anonymized; no PII retained or exposed in model artifacts.</li>
+</ul>
+<h2>Deployment pathway</h2><p>Model packaged as Python module for integration into email filtering pipelines or SOC alert enrichment systems. API endpoints allow real-time prediction on incoming messages.</p>
+<div class="notice"><strong>Status:</strong> Model trained and validated; deployment guidance and API documentation included in repository.</div>
+<h2>Code and documentation</h2><p><a class="btn secondary" href="https://github.com/Korir555/phishing-detection-model" target="_blank" rel="noopener">View on GitHub</a></p>
+<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
+</div></section></main>
+<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
+</body></html>

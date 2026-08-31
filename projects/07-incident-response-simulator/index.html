@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Incident Response Simulator | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<body>
+<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
+<main>
+<section class="hero"><div class="container narrow">
+<p class="eyebrow">07 / INCIDENT RESPONSE</p><h1>SOC Incident Response Simulator</h1><p class="hero-text">Interactive React + Node.js training tool simulating real-world SOC alert triage and incident response with 30+ MITRE ATT&CK-tagged scenarios, scoring, and leaderboard tracking.</p>
+<div class="tags"><span>React</span><span>Node.js</span><span>MITRE ATT&CK</span><span>Incident Response</span><span>SQLite</span></div>
+</div></section>
+<section class="section"><div class="container narrow">
+<h2>Project overview</h2><p>A full-stack web application designed to build incident response and threat analysis skills through realistic SOC scenarios. Users triage alerts, identify attack patterns, correlate indicators, and recommend containment actions.</p>
+<h2>Key features</h2><ul>
+<li><strong>30+ Scenarios:</strong> Real-world incident types—ransomware, lateral movement, data exfiltration, privilege escalation, supply-chain compromise.</li>
+<li><strong>MITRE ATT&CK Integration:</strong> Each scenario tags relevant tactics and techniques (Reconnaissance, Initial Access, Persistence, Defense Evasion, etc.).</li>
+<li><strong>Scoring Engine:</strong> Accuracy-based scoring: correct triage (alert classification), proper ATT&CK mapping, and recommended response actions.</li>
+<li><strong>Leaderboard:</strong> SQLite backend tracks player scores, response times, and mastery by attack phase.</li>
+<li><strong>Dark Terminal Aesthetic:</strong> SOC-authentic styling with live-alert feeds and forensic-style data displays.</li>
+</ul>
+<h2>Technical architecture</h2><p><strong>Frontend:</strong> React SPA with component-based scenario rendering, real-time score updates, and responsive UI for desktop/mobile SOC dashboards.</p>
+<p><strong>Backend:</strong> Node.js + Express REST API serving scenario data, validating user responses, computing scores, and persisting leaderboard rankings to SQLite.</p>
+<p><strong>Data Model:</strong> Scenario definitions include alert context, expected indicators, correct triage classification, MITRE ATT&CK mappings, and grading rubrics.</p>
+<h2>Learning outcomes</h2><ul>
+<li>Recognize incident indicators and attack patterns across stages of the kill chain.</li>
+<li>Map observed behavior to MITRE ATT&CK tactics and techniques.</li>
+<li>Prioritize alerts by severity and business impact.</li>
+<li>Recommend containment and eradication steps aligned to incident type.</li>
+<li>Understand the relationship between technical indicators and attack strategy.</li>
+</ul>
+<h2>Use cases</h2><ul>
+<li>SOC analyst onboarding and continuous training.</li>
+<li>Threat-hunting team skill assessments.</li>
+<li>Incident response playbook validation and refinement.</li>
+<li>Cybersecurity student portfolio demonstration of incident handling knowledge.</li>
+</ul>
+<div class="notice"><strong>Status:</strong> Core simulator functional; leaderboard and advanced scenario branching in ongoing development. Open-source contributions welcome at GitHub.</div>
+<h2>Code and documentation</h2><p><a class="btn secondary" href="https://github.com/Korir555/incident-response-simulator" target="_blank" rel="noopener">View on GitHub</a></p>
+<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
+</div></section></main>
+<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
+</body></html>
