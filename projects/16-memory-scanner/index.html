@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyless Memory Corruption Scanner</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<header>
+  <nav class="nav container">
+    <a class="brand" href="../../index.html">EK<span>.</span></a>
+    <a href="../../index.html" style="color: #00ff88; text-decoration: none;">← Back to Portfolio</a>
+  </nav>
+</header>
+
+<main>
+<section class="project-detail">
+  <div class="container">
+    <h1>Keyless Memory Corruption Scanner</h1>
+    <p class="eyebrow">VULNERABILITY DETECTION & CODE ANALYSIS</p>
+    
+    <div class="project-grid">
+      <div>
+        <h2>Overview</h2>
+        <p>Advanced memory safety vulnerability detection tool that identifies buffer overflows, use-after-free, memory leaks, format string vulnerabilities, and more in C/C++, Python, JavaScript, and Java code—entirely offline with no API keys required.</p>
+        
+        <h3>Key Features</h3>
+        <ul style="list-style: none; margin: 20px 0;">
+          <li style="margin: 8px 0;">✓ Buffer Overflow Detection (strcpy, strcat, gets, sprintf patterns)</li>
+          <li style="margin: 8px 0;">✓ Use-After-Free Analysis (malloc/free variable tracking)</li>
+          <li style="margin: 8px 0;">✓ Memory Leak Identification (allocations without frees)</li>
+          <li style="margin: 8px 0;">✓ Format String Vulnerabilities (printf/sprintf user input)</li>
+          <li style="margin: 8px 0;">✓ Null Pointer Dereference Detection</li>
+          <li style="margin: 8px 0;">✓ Integer Overflow Patterns (arithmetic in allocations)</li>
+          <li style="margin: 8px 0;">✓ Stack Overflow Detection (large stack allocations)</li>
+          <li style="margin: 8px 0;">✓ Multi-Language Support (C/C++, Python, JS, Java)</li>
+          <li style="margin: 8px 0;">✓ CVSS Scoring & Confidence Levels</li>
+          <li style="margin: 8px 0;">✓ Production-Quality Remediation Guidance</li>
+          <li style="margin: 8px 0;">✓ File Upload Support</li>
+          <li style="margin: 8px 0;">✓ Scan History & Statistics</li>
+        </ul>
+        
+        <h3>How It Works</h3>
+        <p><strong>Detection Engine:</strong> Regex pattern matching for vulnerable code patterns combined with variable tracking across scope. Each finding includes severity classification (CRITICAL/HIGH/MEDIUM/LOW), confidence scoring, line numbers, and context-aware remediation recommendations.</p>
+        
+        <p><strong>Offline & Keyless:</strong> Fully local scanning with no external API calls or API keys required. Safe for scanning sensitive source code.</p>
+        
+        <h3>Supported Vulnerabilities</h3>
+        <div style="margin: 15px 0;">
+          <strong>C/C++:</strong> Buffer overflow, use-after-free, double free, format strings, uninitialized variables, null dereference, memory leaks, stack overflow, integer overflow, heap corruption
+        </div>
+        <div style="margin: 15px 0;">
+          <strong>Python/JavaScript/Java:</strong> Language-specific patterns including mutable defaults, circular references, global pollution, unmanaged resources, missing cleanup
+        </div>
+        
+        <h3>Technologies</h3>
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">Regex Pattern Matching</span>
+          <span class="tech-badge">Variable Tracking</span>
+          <span class="tech-badge">Vulnerability Analysis</span>
+          <span class="tech-badge">Code Quality Scoring</span>
+        </div>
+        
+        <h3>Use Cases</h3>
+        <ul style="list-style: none; margin: 20px 0;">
+          <li style="margin: 8px 0;">1. Security Code Review — Quick vulnerability screening</li>
+          <li style="margin: 8px 0;">2. CI/CD Pipeline Integration — Automated scanning</li>
+          <li style="margin: 8px 0;">3. Penetration Testing — Find memory safety issues</li>
+          <li style="margin: 8px 0;">4. Educational Tool — Learn vulnerability patterns</li>
+          <li style="margin: 8px 0;">5. Portfolio Project — Demonstrate security expertise</li>
+        </ul>
+        
+        <h3>API Endpoints</h3>
+        <div style="margin: 15px 0; font-family: Monaco, monospace; font-size: 0.9em;">
+          <div>POST /api/scan — Scan code snippet</div>
+          <div>POST /api/scan/file — Upload and scan file</div>
+          <div>GET /api/examples/&lt;language&gt; — Vulnerable code examples</div>
+          <div>GET /api/history — Scan history</div>
+          <div>GET /api/statistics — Scanning statistics</div>
+        </div>
+        
+        <a href="https://github.com/Korir555/memory-scanner" target="_blank" class="btn">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Emmanuel Kibet Korir. All rights reserved.</p>
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>
