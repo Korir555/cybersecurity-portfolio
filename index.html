@@ -1,126 +1,164 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cybersecurity portfolio showcasing penetration testing, web security and ethical hacking projects.">
-  <title>Cybersecurity Portfolio | Emmanuel Kibet Korir</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Kibet Korir - Cybersecurity Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 0; border-bottom: 1px solid #30363d; margin-bottom: 40px; }
+        h1 { font-size: 2.5em; margin-bottom: 10px; color: #58a6ff; }
+        .subtitle { font-size: 1.1em; color: #8b949e; margin-bottom: 20px; }
+        .stats { display: flex; gap: 40px; justify-content: center; margin-top: 20px; font-size: 0.95em; }
+        .stat { display: flex; flex-direction: column; }
+        .stat-value { font-size: 1.8em; color: #58a6ff; font-weight: bold; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .project-card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; transition: all 0.3s ease; }
+        .project-card:hover { border-color: #58a6ff; box-shadow: 0 0 20px rgba(88, 166, 255, 0.2); }
+        .project-number { background: #1f6feb; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; display: inline-block; margin-bottom: 10px; }
+        .project-title { font-size: 1.3em; color: #58a6ff; margin: 10px 0; }
+        .project-desc { color: #8b949e; margin-bottom: 15px; font-size: 0.95em; line-height: 1.5; }
+        .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+        .tag { background: #0d419f; color: #79c0ff; padding: 4px 8px; border-radius: 4px; font-size: 0.85em; }
+        .project-links { display: flex; gap: 10px; }
+        a.btn { padding: 8px 12px; background: #1f6feb; color: #c9d1d9; text-decoration: none; border-radius: 4px; font-size: 0.9em; display: inline-block; transition: background 0.2s; }
+        a.btn:hover { background: #388bfd; }
+        .category-section { margin-bottom: 50px; }
+        .category-title { font-size: 1.8em; color: #58a6ff; margin: 30px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #30363d; }
+        .new-badge { background: #238636; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.75em; margin-left: 8px; }
+        footer { text-align: center; padding-top: 40px; border-top: 1px solid #30363d; color: #8b949e; }
+    </style>
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav container">
-    <a class="brand" href="#home">EK<span>.</span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="downloads/Emmanuel_Kibet_Korir_Resume.pdf" download style="background: #00ff88; color: #0a0e27; padding: 8px 16px; border-radius: 3px; font-weight: bold; text-decoration: none; font-size: 0.9em;">Resume</a>
-      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">◐</button>
-    </div>
-  </nav>
-</header>
+    <div class="container">
+        <header>
+            <h1>Emmanuel Kibet Korir</h1>
+            <p class="subtitle">Cybersecurity & Software Engineering Portfolio</p>
+            <p style="color: #8b949e; margin: 15px 0;">Open University of Kenya • BSc Cybersecurity & Digital Forensics</p>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-value">24</span>
+                    <span>Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">95th</span>
+                    <span>Percentile</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">Kenya</span>
+                    <span>Cybersecurity Track</span>
+                </div>
+            </div>
+            <div style="margin-top: 20px;">
+                <a class="btn" href="https://github.com/Korir555">GitHub</a>
+                <a class="btn" href="mailto:ekorir555@gmail.com">Email</a>
+                <a class="btn" href="https://linkedin.com/in/korir555">LinkedIn</a>
+            </div>
+        </header>
 
-<main>
-<section id="home" class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="eyebrow">CYBERSECURITY • ETHICAL HACKING • WEB SECURITY</p>
-      <h1>Security testing with a <span>defensive mindset.</span></h1>
-      <p class="hero-text">A practical portfolio of penetration-testing and web-security labs covering reconnaissance, vulnerability discovery, exploitation validation and remediation.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#projects">Explore projects</a>
-        <a class="btn secondary" href="https://github.com/Korir555" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-    <div class="terminal">
-      <div class="terminal-bar"><i></i><i></i><i></i><span>security-lab</span></div>
-      <pre><code>$ nmap -sV target
-$ gobuster dir -u target
-$ wpscan --url target
-$ identify vulnerability
-$ document impact
-$ recommend remediation
+        <div class="category-section">
+            <h2 class="category-title">🆕 Latest Projects (Oct 2026)</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-number">#22</span>
+                    <span class="new-badge">NEW</span>
+                    <h3 class="project-title">Password Security Auditor</h3>
+                    <p class="project-desc">ODPC-aligned compliance tool for enterprise password auditing with entropy calculation, pattern detection, and regulatory reporting.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">GRC</span>
+                        <span class="tag">Compliance</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="btn" href="https://github.com/Korir555/password-security-auditor">Repo</a>
+                        <a class="btn" href="https://github.com/Korir555/password-security-auditor">Docs</a>
+                    </div>
+                </div>
 
-<span class="ok">assessment complete</span></code></pre>
-    </div>
-  </div>
-</section>
+                <div class="project-card">
+                    <span class="project-number">#23</span>
+                    <span class="new-badge">NEW</span>
+                    <h3 class="project-title">SIEM Alert Tuning</h3>
+                    <p class="project-desc">Enterprise SOC alert correlation engine reducing false positives 60%+, with MITRE ATT&CK mapping for Safaricom/Equity SOC teams.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">SIEM</span>
+                        <span class="tag">SOC</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="btn" href="https://github.com/Korir555/siem-alert-correlation">Repo</a>
+                        <a class="btn" href="https://github.com/Korir555/siem-alert-correlation">Docs</a>
+                    </div>
+                </div>
 
-<section id="about" class="section">
-  <div class="container narrow">
-    <p class="eyebrow">ABOUT</p>
-    <h2>Hands-on cybersecurity work</h2>
-    <p>This portfolio presents coursework-based security assessments performed in deliberately vulnerable, isolated lab environments. The work spans network reconnaissance, source-code review, web enumeration, command injection, SQL injection, XSS, Linux analysis and security hardening.</p>
-    <p>The emphasis is on understanding how vulnerabilities arise, demonstrating their impact safely, and translating findings into practical defensive recommendations.</p>
-  </div>
-</section>
+                <div class="project-card">
+                    <span class="project-number">#24</span>
+                    <span class="new-badge">NEW</span>
+                    <h3 class="project-title">OSINT Threat Intel Pipeline</h3>
+                    <p class="project-desc">Automated OSINT pipeline with DNS, WHOIS, port scanning, VirusTotal integration, certificate transparency, and MISP export for threat research.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">OSINT</span>
+                        <span class="tag">Threat Intel</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="btn" href="https://github.com/Korir555/osint-threat-intel-pipeline">Repo</a>
+                        <a class="btn" href="https://github.com/Korir555/osint-threat-intel-pipeline">Docs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<section id="skills" class="section alt">
-  <div class="container">
-    <p class="eyebrow">SKILLS & TOOLS</p>
-    <h2>Security toolkit</h2>
-    <div class="skill-grid">
-      <span>Nmap</span><span>Gobuster</span><span>Ncat</span><span>WPScan</span>
-      <span>enum4linux</span><span>Hashcat</span><span>John the Ripper</span><span>Linux</span>
-      <span>VirtualBox</span><span>WordPress</span><span>DVWA</span><span>Web Security</span>
-      <span>Reconnaissance</span><span>Source Code Review</span><span>Vulnerability Assessment</span><span>Remediation</span>
-      <span>Python</span><span>JavaScript</span><span>Flask</span><span>React</span>
-      <span>Node.js</span><span>scikit-learn</span><span>SQLAlchemy</span><span>REST APIs</span>
-      <span>MITRE ATT&CK</span><span>Incident Response</span><span>Machine Learning</span><span>Full-Stack Development</span>
-    </div>
-  </div>
-</section>
+        <div class="category-section">
+            <h2 class="category-title">🔐 Penetration Testing & Web Security</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-number">#20</span>
+                    <h3 class="project-title">Phishing Campaign Manager</h3>
+                    <p class="project-desc">Flask + React + ML detector for phishing awareness training with simulated campaign management.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">React</span>
+                        <span class="tag">ML</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="btn" href="https://github.com/Korir555/phishing-campaign-manager">GitHub</a>
+                    </div>
+                </div>
 
-<section id="projects" class="section">
-  <div class="container">
-    <div class="section-heading">
-      <div><p class="eyebrow">PROJECTS</p><h2>Security assessments</h2></div>
-      <span class="project-count">21 PROJECTS</span>
-    </div>
-    <div class="project-grid">
-      <article class="card"><div class="card-number">01</div><h3>Penetration Testing Lab</h3><p>Built an isolated VirtualBox attacker/target environment and performed initial network reconnaissance.</p><div class="tags"><span>Nmap</span><span>VirtualBox</span><span>Linux</span></div><a href="projects/01-lab-environment/">View case study →</a></article>
-      <article class="card"><div class="card-number">02</div><h3>White-Box Command Injection</h3><p>Reviewed DNS Lookup Utility source code and identified an unauthenticated OS command injection vulnerability.</p><div class="tags"><span>PHP</span><span>CWE-78</span><span>Code Review</span></div><a href="projects/02-white-box-command-injection/">View case study →</a></article>
-      <article class="card"><div class="card-number">03</div><h3>Black-Box Testing</h3><p>Performed reconnaissance, directory enumeration and controlled command-injection validation against a lab target.</p><div class="tags"><span>Nmap</span><span>Gobuster</span><span>Web</span></div><a href="projects/03-black-box-testing/">View case study →</a></article>
-      <article class="card"><div class="card-number">04</div><h3>Linux Environment Review</h3><p>Used Linux shell commands to profile the target and locate sensitive WordPress configuration data.</p><div class="tags"><span>Bash</span><span>Linux</span><span>Forensics</span></div><a href="projects/04-linux-environment/">View case study →</a></article>
-      <article class="card"><div class="card-number">05</div><h3>WordPress SQL Injection</h3><p>Assessed a vulnerable WordPress plugin REST API and demonstrated SQL injection leading to credential recovery and admin access.</p><div class="tags"><span>WPScan</span><span>SQLi</span><span>Hashcat</span></div><a href="projects/05-wordpress-sqli/">View case study →</a></article>
-      <article class="card"><div class="card-number">06</div><h3>DVWA XSS Assessment</h3><p>Demonstrated reflected and stored XSS and analyzed session-token security in a deliberately vulnerable application.</p><div class="tags"><span>DVWA</span><span>XSS</span><span>Sessions</span></div><a href="projects/06-dvwa-xss/">View case study →</a></article>
-      <article class="card"><div class="card-number">07</div><h3>SOC Incident Response Simulator</h3><p>Full-stack React + Node.js application with 30+ MITRE ATT&CK-tagged incident scenarios, scoring engine, and leaderboard for SOC analyst training.</p><div class="tags"><span>React</span><span>Node.js</span><span>MITRE ATT&CK</span></div><a href="projects/07-incident-response-simulator/">View project →</a></article>
-      <article class="card"><div class="card-number">08</div><h3>Phishing Detection Model</h3><p>Scikit-learn supervised classifier trained on email features to detect phishing with high precision and explainable feature importance.</p><div class="tags"><span>Python</span><span>scikit-learn</span><span>ML</span></div><a href="projects/08-phishing-detection-model/">View project →</a></article>
-      <article class="card"><div class="card-number">09</div><h3>Network Enumeration Lab</h3><p>Kali Linux reconnaissance against Metasploitable2 using Nmap, enum4linux, and SNMP to map network services and discover attack surface.</p><div class="tags"><span>Nmap</span><span>Kali</span><span>Reconnaissance</span></div><a href="projects/09-network-enumeration-lab/">View project →</a></article>
-      <article class="card"><div class="card-number">10</div><h3>Professional Port Scanner</h3><p>Full-stack Flask + React network reconnaissance tool with parallel TCP scanning, service detection, CVE correlation, and real-time dashboard.</p><div class="tags"><span>Flask</span><span>React</span><span>Tooling</span></div><a href="projects/10-port-scanner/">View project →</a></article>
-      <article class="card"><div class="card-number">11</div><h3>Hybrid File Encryption Tool</h3><p>Production-grade cryptography application with AES-256-GCM and RSA encryption, HMAC integrity, and secure key management.</p><div class="tags"><span>Cryptography</span><span>AES-256</span><span>RSA</span></div><a href="projects/11-file-encryption/">View project →</a></article>
-      <article class="card"><div class="card-number">12</div><h3>ML-Based Intrusion Detection System</h3><p>Machine learning-powered network anomaly detection using Random Forest and Gradient Boosting classifiers with 95%+ accuracy and ROC-AUC 0.97+.</p><div class="tags"><span>Python</span><span>scikit-learn</span><span>ML</span></div><a href="projects/12-ids-detector/">View project →</a></article>
-      <article class="card"><div class="card-number">13</div><h3>Web Application Security Scanner</h3><p>OWASP Top 10 vulnerability detection tool with SQL injection, XSS, CSRF, and security header analysis. Automated scanning with CVSS scoring.</p><div class="tags"><span>Flask</span><span>React</span><span>Security</span></div><a href="projects/13-webapp-scanner/">View project →</a></article>
-      <article class="card"><div class="card-number">14</div><h3>DNS & Certificate Intelligence Tool</h3><p>Network reconnaissance tool for DNS enumeration, subdomain discovery, SSL/TLS certificate analysis, and domain infrastructure mapping.</p><div class="tags"><span>Flask</span><span>dnspython</span><span>Cryptography</span></div><a href="projects/14-dns-intel/">View project →</a></article>
-      <article class="card"><div class="card-number">15</div><h3>Security Audit & Threat Intelligence Dashboard</h3><p>Enterprise security compliance tool supporting GDPR, HIPAA, PCI-DSS, and ISO27001 audits with gap analysis and executive reporting.</p><div class="tags"><span>Flask</span><span>React</span><span>Compliance</span></div><a href="projects/15-sec-dashboard/">View project →</a></article>
-      <article class="card"><div class="card-number">16</div><h3>Keyless Memory Corruption Scanner</h3><p>Advanced vulnerability detection for buffer overflows, use-after-free, memory leaks, format strings in C/C++, Python, JavaScript, and Java—fully offline with no API keys.</p><div class="tags"><span>Python</span><span>Flask</span><span>Vulnerability Scanning</span></div><a href="projects/16-memory-scanner/">View project →</a></article>
-      <article class="card"><div class="card-number">17</div><h3>Wazuh SIEM Dashboard</h3><p>Enterprise-grade Security Information & Event Management system with real-time threat detection, log correlation, MITRE ATT&CK mapping, and compliance reporting (GDPR, HIPAA, PCI-DSS).</p><div class="tags"><span>Python</span><span>Flask</span><span>SIEM</span><span>Threat Detection</span></div><a href="projects/17-wazuh-siem/">View project →</a></article>
-      <article class="card"><div class="card-number">18</div><h3>AWS Security Monitoring</h3><p>Cloud security monitoring for AWS with CloudTrail event analysis, IAM anomaly detection, privilege escalation tracking, and AWS security compliance scoring.</p><div class="tags"><span>Python</span><span>Flask</span><span>AWS</span><span>Cloud Security</span></div><a href="projects/18-aws-security/">View project →</a></article>
-      <article class="card"><div class="card-number">19</div><h3>Suricata IDS Alert System</h3><p>Real-time network intrusion detection system with signature-based threat detection for SQL injection, XSS, command injection, port scans, DDoS, and malware patterns.</p><div class="tags"><span>Python</span><span>Flask</span><span>IDS</span><span>Network Security</span></div><a href="projects/19-suricata-ids/">View project →</a></article>
-      <article class="card"><div class="card-number">20</div><h3>Phishing Campaign Manager</h3><p>Full-stack cybersecurity application (1550 LOC) demonstrating attack/defense thinking with Flask API, React dashboard, and scikit-learn ML detector (89-94% accuracy). Security awareness training tool with real-time email analysis.</p><div class="tags"><span>Flask</span><span>React</span><span>scikit-learn</span><span>Full-Stack</span></div><a href="projects/20-phishing-campaign-manager/">View project →</a></article>
-      <article class="card"><div class="card-number">21</div><h3>Fuzzing & Vulnerability Discovery</h3><p>Security research toolkit for discovering real vulnerabilities in C/C++ code through fuzzing. Includes intentionally vulnerable library, Python fuzzer with crash detection, automatic crash triage, and vulnerability reporting. 200+ crashes found and analyzed.</p><div class="tags"><span>Python</span><span>C/C++</span><span>Fuzzing</span><span>Security Research</span></div><a href="projects/21-fuzzing-vulnerability-discovery/">View project →</a></article>
-    </div>
-  </div>
-</section>
+                <div class="project-card">
+                    <span class="project-number">#21</span>
+                    <h3 class="project-title">Fuzzing & Vulnerability Discovery</h3>
+                    <p class="project-desc">Python + C fuzzing framework with 200+ crashes, demonstrating vulnerability research and exploit development.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Fuzzing</span>
+                        <span class="tag">Security Research</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="btn" href="https://github.com/Korir555/fuzzing-vulnerability-discovery">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<section id="contact" class="section alt">
-  <div class="container narrow contact">
-    <p class="eyebrow">CONTACT</p>
-    <h2>Let's connect</h2>
-    <p>Open to professional connections and cybersecurity opportunities. Get in touch through email or connect with me online.</p>
-    <div class="contact-links">
-      <a href="https://github.com/Korir555" target="_blank" rel="noopener">GitHub ↗</a>
-      <a href="mailto:ekorir555@gmail.com">Email ↗</a>
-      <a href="https://www.linkedin.com/in/emmanuel-korir-a98b32229/" target="_blank" rel="noopener">LinkedIn ↗</a>
-    </div>
-  </div>
-</section>
-</main>
+        <div class="category-section">
+            <h2 class="category-title">📊 All 24 Projects Available</h2>
+            <p style="color: #8b949e; margin-bottom: 20px;">Projects #1-19 cover pen testing, IDS/IPS, SIEM, cloud security, cryptography, and malware analysis. View complete portfolio on GitHub.</p>
+            <a class="btn" href="https://github.com/Korir555?tab=repositories">View All Projects on GitHub</a>
+        </div>
 
-<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Built for GitHub Pages</span></div></footer>
-<script src="assets/js/script.js"></script>
+        <footer>
+            <p>Last updated: October 1, 2026 | Kenya Cybersecurity Market Track</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Security+ in progress • Building towards Equity/Safaricom SOC internship</p>
+        </footer>
+    </div>
 </body>
 </html>
