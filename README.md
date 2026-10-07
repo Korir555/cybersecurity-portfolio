@@ -1,6 +1,20 @@
 # Cybersecurity Portfolio
 
+**30 Active Projects | 24 Cybersecurity + 6 GRC | All Production-Ready**
+
 A GitHub Pages portfolio showcasing hands-on penetration testing, ethical hacking, web application security, Linux security assessment, and vulnerability analysis work.
+
+
+## GRC Projects (Projects #25-30)
+
+6 production-ready Governance, Risk, and Compliance projects:
+
+1. **[Risk Assessment Framework](https://github.com/Korir555/grc-risk-assessment-framework)** - Risk identification and scoring
+2. **[Compliance Audit Checklist](https://github.com/Korir555/compliance-audit-checklist)** - DPA/CBK/ISO auditing
+3. **[Incident Response Playbook](https://github.com/Korir555/incident-response-playbook)** - Incident procedures (72-hour DPA notification)
+4. **[GRC Metrics Dashboard](https://github.com/Korir555/grc-metrics-dashboard)** - Executive compliance reporting
+5. **[Security Policy Templates](https://github.com/Korir555/security-policy-templates)** - Kenya DPA/CBK policies
+6. **[Audit Evidence System](https://github.com/Korir555/audit-evidence-system)** - Evidence and finding tracking
 
 ## Featured projects
 
