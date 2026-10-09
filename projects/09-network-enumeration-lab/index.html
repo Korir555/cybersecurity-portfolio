@@ -1,53 +1,91 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Network Enumeration Lab | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cybersecurity portfolio showcasing penetration testing, web security and ethical hacking projects.">
+  <title>Network Enumeration Lab | Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    .project-detail { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+    .project-header { margin-bottom: 3rem; }
+    .project-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #0d3922; }
+    .project-meta { display: flex; gap: 2rem; margin-bottom: 2rem; color: #666; font-size: 0.95rem; }
+    .meta-item { display: flex; flex-direction: column; }
+    .meta-item strong { display: block; margin-bottom: 0.3rem; color: #0d3922; }
+    .section { margin: 3rem 0; }
+    .section h2 { font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 3px solid #238636; padding-bottom: 0.5rem; color: #0d3922; }
+    .section ul { list-style: none; padding: 0; }
+    .section li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; }
+    .section li:before { content: "▸"; position: absolute; left: 0; color: #238636; font-weight: bold; }
+    .cta { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #d0f0c0; }
+    .button { display: inline-block; background: #238636; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.2s; }
+    .button:hover { background: #1a7f37; }
+    .back-link { display: inline-block; margin-bottom: 2rem; color: #238636; font-weight: 500; text-decoration: none; }
+    .back-link:hover { color: #1a7f37; text-decoration: underline; }
+  </style>
+</head>
 <body>
-<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
-<main>
-<section class="hero"><div class="container narrow">
-<p class="eyebrow">09 / RECONNAISSANCE</p><h1>Network Enumeration & Host Discovery Lab</h1><p class="hero-text">Hands-on reconnaissance against intentionally vulnerable Metasploitable2 target using Kali Linux tools—Nmap service scanning, enum4linux SMB enumeration, and SNMP information leakage exploitation.</p>
-<div class="tags"><span>Kali Linux</span><span>Nmap</span><span>enum4linux</span><span>SNMP</span><span>Metasploitable2</span></div>
-</div></section>
-<section class="section"><div class="container narrow">
-<h2>Lab overview</h2><p>Practical network reconnaissance exercise demonstrating systematic information gathering against a live vulnerable target. Techniques span network-layer discovery, service enumeration, protocol-level exploitation, and credential cracking.</p>
-<h2>Environment setup</h2><ul>
-<li><strong>Attacker:</strong> Kali Linux 2024.1 (192.168.56.104) with full offensive toolkit suite.</li>
-<li><strong>Target:</strong> Metasploitable2 (192.168.56.107)—deliberately vulnerable Linux with outdated services and default credentials.</li>
-<li><strong>Network:</strong> VirtualBox Host-only segment for isolated testing without affecting production systems.</li>
-</ul>
-<h2>Enumeration phases</h2><h3>1. Network Scan (Nmap)</h3><ul>
-<li>Identified 22 open ports including SSH, Telnet, SMTP, HTTP, SMB, MySQL, VNC, and proprietary services.</li>
-<li>Service version detection revealed outdated packages vulnerable to known CVEs (e.g., Apache 2.2.8, OpenSSH 4.7).</li>
-<li>OS fingerprinting confirmed Linux kernel and distribution via TTL, response signatures, and open port patterns.</li>
-</ul>
-<h3>2. SMB/NetBIOS Enumeration (enum4linux)</h3><ul>
-<li>Extracted NetBIOS shares and workgroups without authentication.</li>
-<li>Dumped user accounts and SID history via LSA queryPolicy.</li>
-<li>Identified share permissions (readable user home directories, writeable tmp shares).</li>
-<li>Recovered password policy: minimum length 5 characters, no complexity requirement—enabling weak credential attacks.</li>
-</ul>
-<h3>3. SNMP Information Leakage (snmpwalk)</h3><ul>
-<li>Enumerated system description OID and discovered hostname, kernel version, and uptime.</li>
-<li>Harvested installed software inventory via Windows processes OID (cross-referenced with service enumeration).</li>
-<li>Extracted running services and network interface configuration.</li>
-<li>Retrieved local user accounts and group memberships through SNMP community strings (default public/private accessible).</li>
-</ul>
-<h2>Attack surface analysis</h2><ul>
-<li><strong>Weak Authentication:</strong> Telnet (cleartext), default credentials (msfadmin/msfadmin), guest SMB access.</li>
-<li><strong>Known Vulnerabilities:</strong> Apache mod_ssl DoS, OpenSSH integer overflow, Samba arbitrary code execution.</li>
-<li><strong>Information Disclosure:</strong> Unfiltered SNMP, exposed services, verbose error messages, backup files in web root.</li>
-<li><strong>Privilege Escalation:</strong> Kernel exploits, SUID binary misconfigurations, cron job exploitation.</li>
-</ul>
-<h2>Findings and remediation</h2><p><strong>Quick wins:</strong> Disable unnecessary services, enforce strong passwords, restrict SMB/SNMP to trusted networks, apply OS patches.</p>
-<p><strong>Defensive strategy:</strong> Network segmentation, service hardening, intrusion detection tuning, privilege access management, regular vulnerability assessments.</p>
-<div class="notice"><strong>Lab scope:</strong> This assessment was conducted against intentionally vulnerable systems in an isolated lab environment for coursework and training purposes only.</div>
-<h2>Tools reference</h2><ul>
-<li><strong>Nmap:</strong> nmap -sV -sC -O -p- --script smb-* target</li>
-<li><strong>enum4linux:</strong> enum4linux -a -M target</li>
-<li><strong>snmpwalk:</strong> snmpwalk -v2c -c public target 1.3.6.1.4.1.77.1.2.25</li>
-<li><strong>Supporting tools:</strong> Hashcat (password cracking), tcpdump (traffic analysis), Metasploit (exploit validation).</li>
-</ul>
-<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
-</div></section></main>
-<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
-</body></html>
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">Security Portfolio</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="project-detail">
+  <a href="/#projects" class="back-link">← Back to Projects</a>
+  
+  <div class="project-header">
+    <h1>Network Enumeration Lab</h1>
+    <div class="project-meta">
+      <div class="meta-item">
+        <strong>Focus Area</strong>
+        <span>Red Team / Reconnaissance</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>Kali Linux reconnaissance against Metasploitable2 using Nmap, enum4linux, and SNMP to map network services and discover attack surface.</p>
+  </div>
+
+  <div class="section">
+    <h2>Key Features</h2>
+    <ul>
+      <li>SNMP enumeration</li>
+      <li>Kali Linux tools</li>
+      <li>Network service discovery</li>
+      <li>Attack surface mapping</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Hiring Relevance</h2>
+    <ul>
+      <li>Network reconnaissance expertise</li>
+      <li>Service enumeration techniques</li>
+      <li>Metasploitable experience</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <a href="https://github.com/Korir555/network-enumeration-lab" class="button" target="_blank">View Repository on GitHub</a>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Emmanuel Kibet Korir</span>
+    <span><a href="https://github.com/Korir555" target="_blank">GitHub</a> • <a href="mailto:ekorir555@gmail.com">Email</a></span>
+  </div>
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>
