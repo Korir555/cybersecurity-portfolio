@@ -1,58 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 22: Password Security Auditor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cybersecurity portfolio showcasing penetration testing, web security and ethical hacking projects.">
+  <title>Password Security Auditor | Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 2rem; background: #f6f8fa; }
-    .container { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    h1 { color: #0969da; margin-bottom: 0.5rem; }
-    .meta { color: #666; font-size: 0.9rem; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
-    .tech { display: inline-block; background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 4px; margin: 0.2rem; font-size: 0.85rem; }
-    .overview { background: #f6f8fa; padding: 1.5rem; border-left: 4px solid #0969da; margin: 2rem 0; }
-    .button { display: inline-block; background: #238636; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; margin: 1rem 0; }
+    .project-detail { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+    .project-header { margin-bottom: 3rem; }
+    .project-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .project-meta { display: flex; gap: 2rem; margin-bottom: 2rem; color: #666; font-size: 0.95rem; }
+    .meta-item { display: flex; flex-direction: column; }
+    .meta-item strong { display: block; margin-bottom: 0.3rem; color: #333; }
+    .section { margin: 3rem 0; }
+    .section h2 { font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 2px solid #0969da; padding-bottom: 0.5rem; }
+    .section ul { list-style: none; padding: 0; }
+    .section li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; }
+    .section li:before { content: "▸"; position: absolute; left: 0; color: #0969da; }
+    .cta { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; }
+    .button { display: inline-block; background: #238636; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.2s; }
     .button:hover { background: #1a7f37; }
+    .back-link { display: inline-block; margin-bottom: 2rem; color: #0969da; text-decoration: none; }
+    .back-link:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Project 22: Password Security Auditor</h1>
-    <div class="meta">
-      <p><strong>Focus:</strong> Compliance & Audit | <strong>Tech Stack:</strong> <span class="tech">Flask</span> <span class="tech">Python</span> <span class="tech">GRC</span></p>
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">Security Portfolio</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#contact">Contact</a>
     </div>
+  </nav>
+</header>
 
-    <div class="overview">
-      <h2>Overview</h2>
-      <p>Enterprise password auditing tool aligned with Kenya Data Protection Act (ODPC) compliance requirements. Conducts entropy analysis, pattern detection, and generates regulatory compliance reports for banking and financial institutions.</p>
+<main class="project-detail">
+  <a href="/#projects" class="back-link">← Back to Projects</a>
+  
+  <div class="project-header">
+    <h1>Password Security Auditor</h1>
+    <div class="project-meta">
+      <div class="meta-item">
+        <strong>Focus Area</strong>
+        <span>Compliance & Audit</span>
+      </div>
     </div>
+  </div>
 
+  <div class="section">
+    <h2>Overview</h2>
+    <p>Enterprise password auditing tool aligned with Kenya Data Protection Act (ODPC) compliance requirements with entropy analysis, pattern detection, and regulatory reporting.</p>
+  </div>
+
+  <div class="section">
     <h2>Key Features</h2>
     <ul>
-      <li>Entropy calculation for password strength assessment</li>
-      <li>Pattern detection (dictionary words, sequential chars, repeating chars)</li>
-      <li>Kenya DPA compliance reporting and audit trails</li>
-      <li>Enterprise password policy validation</li>
-      <li>Executive summary with compliance gap analysis</li>
-      <li>JSON export for compliance documentation</li>
+      <li>Entropy calculation</li>
+      <li>Password pattern detection</li>
+      <li>Kenya DPA compliance reporting</li>
+      <li>Audit trail logging</li>
+      <li>Executive summary generation</li>
     </ul>
+  </div>
 
-    <h2>Technical Details</h2>
-    <ul>
-      <li><strong>Backend:</strong> Flask REST API with password analysis engine</li>
-      <li><strong>Security:</strong> No password storage; hashing verification only</li>
-      <li><strong>Compliance:</strong> ODPC alignment with audit logging</li>
-      <li><strong>Deployment:</strong> Docker containerized for enterprise use</li>
-    </ul>
-
+  <div class="section">
     <h2>Hiring Relevance</h2>
     <ul>
-      <li><strong>For Equity Bank:</strong> Demonstrates GRC and compliance audit expertise aligned with banking regulatory requirements</li>
-      <li><strong>For Safaricom:</strong> Shows understanding of Kenya CII mandate and password security enforcement</li>
-      <li>Practical experience with ODPC compliance frameworks used by all Kenya financial institutions</li>
+      <li>GRC and compliance experience</li>
+      <li>Kenya regulatory framework knowledge</li>
+      <li>Enterprise audit tool development</li>
     </ul>
-
-    <a href="https://github.com/Korir555/password-security-auditor" class="button" target="_blank">View on GitHub</a>
   </div>
+
+  <div class="cta">
+    <a href="https://github.com/Korir555/password-security-auditor" class="button" target="_blank">View Repository on GitHub</a>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Emmanuel Kibet Korir</span>
+    <span><a href="https://github.com/Korir555" target="_blank">GitHub</a> • <a href="mailto:ekorir555@gmail.com">Email</a></span>
+  </div>
+</footer>
+
+<script src="../../assets/js/script.js"></script>
 </body>
 </html>
