@@ -1,21 +1,91 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Black-Box Penetration Testing | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cybersecurity portfolio showcasing penetration testing, web security and ethical hacking projects.">
+  <title>Black-Box Testing | Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    .project-detail { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+    .project-header { margin-bottom: 3rem; }
+    .project-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #0d3922; }
+    .project-meta { display: flex; gap: 2rem; margin-bottom: 2rem; color: #666; font-size: 0.95rem; }
+    .meta-item { display: flex; flex-direction: column; }
+    .meta-item strong { display: block; margin-bottom: 0.3rem; color: #0d3922; }
+    .section { margin: 3rem 0; }
+    .section h2 { font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 3px solid #238636; padding-bottom: 0.5rem; color: #0d3922; }
+    .section ul { list-style: none; padding: 0; }
+    .section li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; }
+    .section li:before { content: "▸"; position: absolute; left: 0; color: #238636; font-weight: bold; }
+    .cta { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #d0f0c0; }
+    .button { display: inline-block; background: #238636; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.2s; }
+    .button:hover { background: #1a7f37; }
+    .back-link { display: inline-block; margin-bottom: 2rem; color: #238636; font-weight: 500; text-decoration: none; }
+    .back-link:hover { color: #1a7f37; text-decoration: underline; }
+  </style>
+</head>
 <body>
-<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
-<main>
-<section class="hero"><div class="container narrow">
-<p class="eyebrow">03 / NETWORK & WEB ASSESSMENT</p><h1>Black-Box Penetration Testing</h1><p class="hero-text">Assessed the target without prior source-code knowledge, moving from reconnaissance and directory enumeration to controlled command-injection validation.</p>
-<div class="tags"><span>Nmap</span><span>Gobuster</span><span>Ncat</span><span>Linux shell</span></div>
-</div></section>
-<section class="section"><div class="container narrow">
-<h2>Lab environment</h2><p>EH vulnerable machine (192.168.56.105), Ubuntu 24.04 Attackbox (192.168.56.104), isolated vboxnet0 network.</p>
-<h2>Assessment highlights</h2><ul><li>Identified SSH, Telnet, HTTP and an undocumented service on port 6464 during full-port scanning.</li><li>Gobuster discovered WordPress, phpMyAdmin and other web paths.</li><li>Input fuzzing showed that the DNS utility accepted special characters without validation.</li><li>Controlled testing confirmed command injection and execution as the web-server account.</li><li>The assessment also identified weak filesystem permissions and exposed credential material in the lab target.</li></ul>
-<h2>Security impact</h2><p>The report demonstrates a complete attack chain from unauthenticated web input to interactive shell access in the deliberately vulnerable environment.</p>
-<h2>Recommendations</h2><ul><li>Remove shell execution from the DNS lookup feature.</li><li>Allowlist valid domain-name input.</li><li>Apply least privilege to the web service account.</li><li>Review exposed legacy services and sensitive filesystem permissions.</li><li>Monitor and log suspicious input and exploitation attempts.</li></ul>
-<div class="notice"><strong>Lab scope:</strong> This case study describes coursework performed against intentionally vulnerable systems in an isolated environment.</div>
-<h2>Case study</h2><p><a class="btn secondary" href="../../downloads/03-black-box-testing-case-study.pdf" target="_blank" rel="noopener">Download sanitized case study (PDF)</a></p>
-<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
-</div></section></main>
-<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
-</body></html>
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">Security Portfolio</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="project-detail">
+  <a href="/#projects" class="back-link">← Back to Projects</a>
+  
+  <div class="project-header">
+    <h1>Black-Box Testing</h1>
+    <div class="project-meta">
+      <div class="meta-item">
+        <strong>Focus Area</strong>
+        <span>Red Team / Web Security</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>Performed reconnaissance, directory enumeration and controlled command-injection validation against a lab target without source code access.</p>
+  </div>
+
+  <div class="section">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Directory enumeration and fuzzing</li>
+      <li>Reconnaissance automation</li>
+      <li>Command injection validation</li>
+      <li>Exploitation technique demonstration</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Hiring Relevance</h2>
+    <ul>
+      <li>Black-box testing methodology</li>
+      <li>Web application security assessment</li>
+      <li>Real-world attack scenario experience</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <a href="https://github.com/Korir555/black-box-testing" class="button" target="_blank">View Repository on GitHub</a>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Emmanuel Kibet Korir</span>
+    <span><a href="https://github.com/Korir555" target="_blank">GitHub</a> • <a href="mailto:ekorir555@gmail.com">Email</a></span>
+  </div>
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>
