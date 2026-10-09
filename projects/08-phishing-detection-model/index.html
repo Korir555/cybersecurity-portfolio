@@ -1,41 +1,91 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Phishing Detection Model | Cybersecurity Portfolio</title><link rel="stylesheet" href="../../assets/css/style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cybersecurity portfolio showcasing penetration testing, web security and ethical hacking projects.">
+  <title>Phishing Detection Model | Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    .project-detail { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+    .project-header { margin-bottom: 3rem; }
+    .project-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #0d3922; }
+    .project-meta { display: flex; gap: 2rem; margin-bottom: 2rem; color: #666; font-size: 0.95rem; }
+    .meta-item { display: flex; flex-direction: column; }
+    .meta-item strong { display: block; margin-bottom: 0.3rem; color: #0d3922; }
+    .section { margin: 3rem 0; }
+    .section h2 { font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 3px solid #238636; padding-bottom: 0.5rem; color: #0d3922; }
+    .section ul { list-style: none; padding: 0; }
+    .section li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; }
+    .section li:before { content: "▸"; position: absolute; left: 0; color: #238636; font-weight: bold; }
+    .cta { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #d0f0c0; }
+    .button { display: inline-block; background: #238636; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.2s; }
+    .button:hover { background: #1a7f37; }
+    .back-link { display: inline-block; margin-bottom: 2rem; color: #238636; font-weight: 500; text-decoration: none; }
+    .back-link:hover { color: #1a7f37; text-decoration: underline; }
+  </style>
+</head>
 <body>
-<header class="site-header"><nav class="nav container"><a class="brand" href="../../">EK<span>.</span></a><a href="../../#projects">← All projects</a></nav></header>
-<main>
-<section class="hero"><div class="container narrow">
-<p class="eyebrow">08 / MACHINE LEARNING SECURITY</p><h1>Phishing Email Detection Model</h1><p class="hero-text">Scikit-learn classification model trained on email header and content features to detect phishing attempts with feature engineering, cross-validation, and performance evaluation.</p>
-<div class="tags"><span>Python</span><span>scikit-learn</span><span>Pandas</span><span>Feature Engineering</span><span>Classification</span></div>
-</div></section>
-<section class="section"><div class="container narrow">
-<h2>Project overview</h2><p>Machine learning approach to phishing detection using supervised classification. The model learns patterns in legitimate and phishing emails to predict unknown message intent and assist email security teams in filtering campaigns.</p>
-<h2>Dataset and features</h2><p>Training data extracted from public phishing corpora and legitimate email datasets. Feature engineering focused on:</p><ul>
-<li><strong>Header Analysis:</strong> Sender domain reputation, SPF/DKIM/DMARC alignment, suspicious reply-to patterns.</li>
-<li><strong>Content Features:</strong> Urgency keywords, misspellings, suspicious URL patterns, hidden form fields, attachment anomalies.</li>
-<li><strong>Statistical Features:</strong> Character diversity, entropy, domain age, TLD reputation, link-to-text ratio.</li>
-<li><strong>NLP Features:</strong> Sentiment polarity, grammar anomalies, targeted recipient detection.</li>
-</ul>
-<h2>Model development</h2><p><strong>Algorithm:</strong> Random Forest classifier with hyperparameter tuning via GridSearchCV.</p>
-<p><strong>Evaluation Metrics:</strong> Precision, recall, F1-score, ROC-AUC, and confusion matrix analysis with focus on minimizing false negatives (missed phishing).</p>
-<p><strong>Cross-Validation:</strong> 5-fold stratified cross-validation to ensure robust generalization across email distribution shifts.</p>
-<p><strong>Feature Importance:</strong> SHAP and permutation-based feature importance to explain model decisions and identify strongest phishing indicators.</p>
-<h2>Results and validation</h2><ul>
-<li>Achieved ~94% precision and ~91% recall on test set.</li>
-<li>Model generalizes well to unseen phishing campaigns and evolving sender tactics.</li>
-<li>Top predictive features: suspicious URL presence, sender domain mismatch, urgency language patterns.</li>
-<li>Explainability: Per-email prediction reasoning supports SOC analyst review and appeals.</li>
-</ul>
-<h2>Security considerations</h2><ul>
-<li>Model not used in isolation—designed to augment, not replace, human analysis and email gateway rules.</li>
-<li>Adversarial robustness: Feature engineering prioritizes signals resistant to common evasion (polymorphic content, obfuscation).</li>
-<li>Ongoing retraining required as phishing tactics evolve; monitoring for concept drift and performance decay.</li>
-<li>Privacy-first: Training data anonymized; no PII retained or exposed in model artifacts.</li>
-</ul>
-<h2>Deployment pathway</h2><p>Model packaged as Python module for integration into email filtering pipelines or SOC alert enrichment systems. API endpoints allow real-time prediction on incoming messages.</p>
-<div class="notice"><strong>Status:</strong> Model trained and validated; deployment guidance and API documentation included in repository.</div>
-<h2>Code and documentation</h2><p><a class="btn secondary" href="https://github.com/Korir555/phishing-detection-model" target="_blank" rel="noopener">View on GitHub</a></p>
-<p><a class="btn secondary" href="../../">Return to portfolio</a></p>
-</div></section></main>
-<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Cybersecurity Portfolio</span></div></footer>
-</body></html>
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">Security Portfolio</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="project-detail">
+  <a href="/#projects" class="back-link">← Back to Projects</a>
+  
+  <div class="project-header">
+    <h1>Phishing Detection Model</h1>
+    <div class="project-meta">
+      <div class="meta-item">
+        <strong>Focus Area</strong>
+        <span>Blue Team / ML Security</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>Scikit-learn supervised classifier trained on email features to detect phishing with high precision and explainable feature importance.</p>
+  </div>
+
+  <div class="section">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Email feature engineering</li>
+      <li>Machine learning classification</li>
+      <li>Model accuracy optimization</li>
+      <li>Feature importance analysis</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Hiring Relevance</h2>
+    <ul>
+      <li>Machine learning security application</li>
+      <li>Email security understanding</li>
+      <li>Data science capability</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <a href="https://github.com/Korir555/phishing-detection-model" class="button" target="_blank">View Repository on GitHub</a>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Emmanuel Kibet Korir</span>
+    <span><a href="https://github.com/Korir555" target="_blank">GitHub</a> • <a href="mailto:ekorir555@gmail.com">Email</a></span>
+  </div>
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>
