@@ -1,203 +1,815 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cybersecurity portfolio showcasing penetration testing, web security and ethical hacking projects.">
-  <title>Cybersecurity Portfolio | Emmanuel Kibet Korir</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cybersecurity portfolio: SOC operations, incident response, compliance, penetration testing.">
+    <title>Emmanuel Kibet Korir | Cybersecurity Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: #0d1117; 
+            color: #e6edf3; 
+            line-height: 1.6;
+        }
+        
+        header {
+            background: #161b22;
+            padding: 20px 40px;
+            border-bottom: 2px solid #238636;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav a { color: #8b949e; text-decoration: none; margin: 0 15px; transition: 0.2s; }
+        .nav a:hover { color: #58a85c; }
+        .resume-btn { background: #238636; color: #fff; padding: 8px 16px; border-radius: 6px; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        .hero {
+            padding: 80px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border-bottom: 1px solid #238636;
+        }
+        
+        .hero h1 { font-size: 3em; color: #0d3922; margin-bottom: 20px; }
+        .hero .tagline { font-size: 1.2em; color: #8b949e; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .cta-btn {
+            padding: 12px 30px;
+            border: 2px solid #238636;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #58a85c;
+            transition: 0.2s;
+            font-weight: 500;
+        }
+        
+        .cta-btn:hover { background: #0d3922; }
+        .cta-btn.primary { background: #238636; color: #fff; }
+        
+        section {
+            padding: 60px 40px;
+            border-bottom: 1px solid #238636;
+        }
+        
+        section h2 {
+            color: #0d3922;
+            font-size: 2em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #238636;
+            padding-bottom: 15px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-desc {
+            color: #8b949e;
+            max-width: 1200px;
+            margin: -10px auto 40px;
+            font-size: 1.05em;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #161b22;
+            padding: 30px;
+            border: 1px solid #238636;
+            border-radius: 8px;
+        }
+        
+        .about-content h3 {
+            color: #238636;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .skills-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-group {
+            background: #161b22;
+            padding: 20px;
+            border: 1px solid #238636;
+            border-radius: 8px;
+        }
+        
+        .skill-group h3 {
+            color: #0d3922;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #238636;
+            padding-bottom: 10px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: #0d3922;
+            color: #58a85c;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid #238636;
+        }
+        
+        .project-filters {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border: 1px solid #238636;
+            background: transparent;
+            color: #58a85c;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 0.9em;
+        }
+        
+        .filter-btn:hover { background: #0d3922; }
+        .filter-btn.active { background: #238636; color: #fff; }
+        
+        .projects-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .project-card {
+            background: #161b22;
+            border: 1px solid #238636;
+            border-radius: 8px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+        
+        .project-card:hover {
+            border-color: #58a85c;
+            box-shadow: 0 0 20px rgba(88, 168, 92, 0.2);
+        }
+        
+        .project-card h3 {
+            color: #0d3922;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+        
+        .project-meta {
+            color: #8b949e;
+            font-size: 0.9em;
+            margin-bottom: 12px;
+        }
+        
+        .project-desc {
+            color: #c9d1d9;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .project-link {
+            color: #58a85c;
+            text-decoration: none;
+            padding: 6px 12px;
+            border: 1px solid #238636;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: 0.2s;
+        }
+        
+        .project-link:hover {
+            background: #0d3922;
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: #0d3922;
+            color: #58a85c;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            border: 1px solid #238636;
+        }
+        
+        .section-toggle {
+            max-width: 1200px;
+            margin: 0 auto 20px;
+            padding: 15px;
+            background: #161b22;
+            border: 1px solid #238636;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #58a85c;
+            font-weight: 500;
+        }
+        
+        .section-toggle:hover {
+            background: #0d3922;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #8b949e;
+            border-top: 1px solid #238636;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; }
+            .projects-grid { grid-template-columns: 1fr; }
+            header { padding: 15px 20px; }
+            section { padding: 40px 20px; }
+        }
+    </style>
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav container">
-    <a class="brand" href="#home">EK<span>.</span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="downloads/Emmanuel_Kibet_Korir_Resume.pdf" download style="background: #00ff88; color: #0a0e27; padding: 8px 16px; border-radius: 3px; font-weight: bold; text-decoration: none; font-size: 0.9em;">Resume</a>
-      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">◐</button>
-    </div>
-  </nav>
-</header>
-<section id="hero" class="hero">
-  <div class="hero-content">
-    <p class="eyebrow">CYBERSECURITY PROFESSIONAL</p>
-    <h1>Emmanuel Kibet Korir</h1>
-    <p class="tagline">Penetration testing, incident response, and security architecture. Exploring threats from both sides of the red line.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="cta">View Portfolio</a>
-      <a href="#contact" class="cta secondary">Get In Touch</a>
-    </div>
-  </div>
-</section>
+    <header>
+        <nav class="nav">
+            <div style="font-size: 1.5em; font-weight: bold; color: #0d3922;">EK<span style="color: #238636;">.</span></div>
+            <div>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#featured">Featured</a>
+                <a href="#projects">All Projects</a>
+                <a href="mailto:ekorir555@gmail.com" class="resume-btn">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-
-<main>
-<section id="home" class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="eyebrow">CYBERSECURITY • ETHICAL HACKING • WEB SECURITY</p>
-      <h1>Security testing with a <span>defensive mindset.</span></h1>
-      <p class="hero-text">A practical portfolio of penetration-testing and web-security labs covering reconnaissance, vulnerability discovery, exploitation validation and remediation.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#projects">Explore projects</a>
-        <a class="btn secondary" href="https://github.com/Korir555" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-    <div class="terminal">
-      <div class="terminal-bar"><i></i><i></i><i></i><span>security-lab</span></div>
-      <pre><code>$ nmap -sV target
-$ gobuster dir -u target
-$ wpscan --url target
-$ identify vulnerability
-$ document impact
-$ recommend remediation
-
-<span class="ok">assessment complete</span></code></pre>
-    </div>
-  </div>
-</section>
-
-
-<section id="about" class="section">
-  <div class="container narrow">
-    <p class="eyebrow">ABOUT</p>
-    <h2>Hands-on cybersecurity work</h2>
-    <p>This portfolio presents coursework-based security assessments performed in deliberately vulnerable, isolated lab environments. The work spans network reconnaissance, source-code review, web enumeration, command injection, SQL injection, XSS, Linux analysis and security hardening.</p>
-    <p>The emphasis is on understanding how vulnerabilities arise, demonstrating their impact safely, and translating findings into practical defensive recommendations.</p>
-  </div>
-</section>
-
-<section id="skills" class="section alt">
-  <div class="container">
-    <p class="eyebrow">SKILLS & TOOLS</p>
-    <h2>Security toolkit</h2>
-    <div class="skill-grid">
-      <span>Nmap</span><span>Gobuster</span><span>Ncat</span><span>WPScan</span>
-      <span>enum4linux</span><span>Hashcat</span><span>John the Ripper</span><span>Linux</span>
-      <span>VirtualBox</span><span>WordPress</span><span>DVWA</span><span>Web Security</span>
-      <span>Reconnaissance</span><span>Source Code Review</span><span>Vulnerability Assessment</span><span>Remediation</span>
-      <span>Python</span><span>JavaScript</span><span>Flask</span><span>React</span>
-      <span>Node.js</span><span>scikit-learn</span><span>SQLAlchemy</span><span>REST APIs</span>
-      <span>MITRE ATT&CK</span><span>Incident Response</span><span>Machine Learning</span><span>Full-Stack Development</span>
-    </div>
-  </div>
-</section>
-
-<section id="projects" class="section" style="display: block; visibility: visible;">
-  <div class="container">
-    <div class="section-header">
-      <p class="eyebrow">PORTFOLIO</p>
-      <h2>PROJECTS</h2>
-      <p>Security assessments & governance — <strong>33 projects</strong></p>
-    </div>
-    <div class="category-section">
-      <h3 style="border-left: 5px solid #238636; padding-left: 15px; margin: 2rem 0 1rem 0; color: #0d3922;">Red Team / Penetration Testing <span style="color: #666; font-size: 0.9em;">(7)</span></h3>
-      <div class="grid">
-        <article class="card"><div class="card-number">01</div><h3>Penetration Testing Lab</h3><p>Built an isolated VirtualBox attacker/target environment and performed initial network reconnaissance.</p><div class="tags"><span>Nmap</span><span>VirtualBox</span><span>Linux</span></div><a href="projects/01-penetration-testing-lab/">View case study →</a></article>
-        <article class="card"><div class="card-number">02</div><h3>White-Box Command Injection</h3><p>Reviewed DNS Lookup Utility source code and identified an unauthenticated OS command injection vulnerability.</p><div class="tags"><span>PHP</span><span>CWE-78</span><span>Code Review</span></div><a href="projects/02-white-box-command-injection/">View case study →</a></article>
-        <article class="card"><div class="card-number">03</div><h3>Black-Box Testing</h3><p>Performed reconnaissance, directory enumeration and controlled command-injection validation against a lab target.</p><div class="tags"><span>Burp Suite</span><span>Fuzzing</span><span>Automation</span></div><a href="projects/03-black-box-testing/">View case study →</a></article>
-        <article class="card"><div class="card-number">04</div><h3>Linux Environment Review</h3><p>Used Linux shell commands to profile the target system and locate sensitive WordPress configuration data.</p><div class="tags"><span>Linux</span><span>Bash</span><span>Post-Exploitation</span></div><a href="projects/04-linux-environment-review/">View case study →</a></article>
-        <article class="card"><div class="card-number">05</div><h3>WordPress SQL Injection</h3><p>Assessed a vulnerable WordPress plugin REST API and demonstrated SQL injection leading to credential recovery.</p><div class="tags"><span>MySQL</span><span>WordPress</span><span>WPScan</span></div><a href="projects/05-wordpress-sql-injection/">View case study →</a></article>
-        <article class="card"><div class="card-number">06</div><h3>DVWA XSS Assessment</h3><p>Demonstrated reflected and stored XSS vulnerabilities and analyzed session-token security.</p><div class="tags"><span>XSS</span><span>Session Hijacking</span><span>JavaScript</span></div><a href="projects/06-dvwa-xss-assessment/">View case study →</a></article>
-        <article class="card"><div class="card-number">09</div><h3>Network Enumeration Lab</h3><p>Kali Linux reconnaissance against Metasploitable2 using Nmap, enum4linux, and SNMP.</p><div class="tags"><span>Nmap</span><span>Enum4linux</span><span>SNMP</span></div><a href="projects/09-network-enumeration-lab/">View case study →</a></article>
-      </div>
-    </div>
-    <div class="category-section">
-      <h3 style="border-left: 5px solid #238636; padding-left: 15px; margin: 2rem 0 1rem 0; color: #0d3922;">Blue Team / Defense & Detection <span style="color: #666; font-size: 0.9em;">(4)</span></h3>
-      <div class="grid">
-        <article class="card"><div class="card-number">07</div><h3>SOC Incident Response Simulator</h3><p>Full-stack React + Node.js with 30+ MITRE ATT&CK-tagged incident scenarios and leaderboard.</p><div class="tags"><span>React</span><span>Node.js</span><span>MITRE ATT&CK</span></div><a href="projects/07-soc-incident-response-simulator/">View case study →</a></article>
-        <article class="card"><div class="card-number">08</div><h3>Phishing Detection Model</h3><p>Scikit-learn supervised classifier trained on email features to detect phishing with high precision.</p><div class="tags"><span>Python</span><span>ML</span><span>Email Security</span></div><a href="projects/08-phishing-detection-model/">View case study →</a></article>
-        <article class="card"><div class="card-number">12</div><h3>ML-Based Intrusion Detection System</h3><p>ML-powered network anomaly detection using Random Forest and Gradient Boosting (95%+ accuracy).</p><div class="tags"><span>ML</span><span>Python</span><span>Network Security</span></div><a href="projects/12-ml-based-intrusion-detection-system/">View case study →</a></article>
-        <article class="card"><div class="card-number">19</div><h3>Suricata IDS Alert System</h3><p>Real-time network intrusion detection with signature-based threat detection for SQL injection, XSS, DDoS.</p><div class="tags"><span>Suricata</span><span>IDS/IPS</span><span>Network Security</span></div><a href="projects/19-suricata-ids-alert-system/">View case study →</a></article>
-      </div>
-    </div>
-    <div class="category-section">
-      <h3 style="border-left: 5px solid #238636; padding-left: 15px; margin: 2rem 0 1rem 0; color: #0d3922;">SIEM & Security Monitoring <span style="color: #666; font-size: 0.9em;">(3)</span></h3>
-      <div class="grid">
-        <article class="card"><div class="card-number">17</div><h3>Wazuh SIEM Dashboard</h3><p>Enterprise-grade SIEM with real-time threat detection, log correlation, MITRE ATT&CK mapping, compliance reporting.</p><div class="tags"><span>Wazuh</span><span>SIEM</span><span>Compliance</span></div><a href="projects/17-wazuh-siem-dashboard/">View case study →</a></article>
-        <article class="card"><div class="card-number">18</div><h3>AWS Security Monitoring</h3><p>Cloud security monitoring for AWS with CloudTrail analysis, IAM anomaly detection, compliance scoring.</p><div class="tags"><span>AWS</span><span>CloudTrail</span><span>IAM</span></div><a href="projects/18-aws-security-monitoring/">View case study →</a></article>
-        <article class="card"><div class="card-number">23</div><h3>SIEM Alert Tuning & Correlation</h3><p>Enterprise SOC alert correlation engine reducing false positives 60%+ with MITRE ATT&CK mapping.</p><div class="tags"><span>SIEM</span><span>SOC Operations</span><span>MITRE ATT&CK</span></div><a href="projects/23-siem-alert-tuning-and-correlation/">View case study →</a></article>
-      </div>
-    </div>
-    <div class="category-section">
-      <h3 style="border-left: 5px solid #238636; padding-left: 15px; margin: 2rem 0 1rem 0; color: #0d3922;">ML Security & Threat Intelligence <span style="color: #666; font-size: 0.9em;">(3)</span></h3>
-      <div class="grid">
-        <article class="card"><div class="card-number">20</div><h3>Phishing Campaign Manager</h3><p>Full-stack Flask + React + ML detector achieving 89-94% accuracy with security awareness training.</p><div class="tags"><span>Flask</span><span>React</span><span>ML</span></div><a href="projects/20-phishing-campaign-manager/">View case study →</a></article>
-        <article class="card"><div class="card-number">21</div><h3>Fuzzing & Vulnerability Discovery</h3><p>Security research toolkit discovering real vulnerabilities in C/C++ through fuzzing (200+ crashes).</p><div class="tags"><span>Fuzzing</span><span>Vulnerability Research</span><span>C/C++</span></div><a href="projects/21-fuzzing-and-vulnerability-discovery/">View case study →</a></article>
-        <article class="card"><div class="card-number">24</div><h3>OSINT Threat Intelligence Pipeline</h3><p>Automated OSINT pipeline with VirusTotal, certificate transparency, MISP export for threat intel.</p><div class="tags"><span>OSINT</span><span>Threat Intel</span><span>Automation</span></div><a href="projects/24-osint-threat-intelligence-pipeline/">View case study →</a></article>
-      </div>
-    </div>
-    <div class="category-section">
-      <h3 style="border-left: 5px solid #238636; padding-left: 15px; margin: 2rem 0 1rem 0; color: #0d3922;">Security Tools & Frameworks <span style="color: #666; font-size: 0.9em;">(5)</span></h3>
-      <div class="grid">
-        <article class="card"><div class="card-number">10</div><h3>Professional Port Scanner</h3><p>Full-stack Flask + React with parallel TCP scanning, service detection, CVE correlation.</p><div class="tags"><span>Flask</span><span>React</span><span>Python</span></div><a href="projects/10-professional-port-scanner/">View case study →</a></article>
-        <article class="card"><div class="card-number">11</div><h3>Hybrid File Encryption Tool</h3><p>Production-grade AES-256-GCM and RSA encryption with HMAC integrity and secure key management.</p><div class="tags"><span>Cryptography</span><span>Python</span><span>Security</span></div><a href="projects/11-hybrid-file-encryption-tool/">View case study →</a></article>
-        <article class="card"><div class="card-number">13</div><h3>Web Application Security Scanner</h3><p>OWASP Top 10 vulnerability detection with SQL injection, XSS, CSRF, security headers analysis.</p><div class="tags"><span>Flask</span><span>Python</span><span>OWASP</span></div><a href="projects/13-web-application-security-scanner/">View case study →</a></article>
-        <article class="card"><div class="card-number">14</div><h3>DNS & Certificate Intelligence Tool</h3><p>DNS enumeration, subdomain discovery, SSL/TLS certificate analysis, domain infrastructure mapping.</p><div class="tags"><span>DNS</span><span>Reconnaissance</span><span>SSL/TLS</span></div><a href="projects/14-dns-and-certificate-intelligence-tool/">View case study →</a></article>
-        <article class="card"><div class="card-number">16</div><h3>Keyless Memory Corruption Scanner</h3><p>Advanced vulnerability detection for buffer overflows, use-after-free, memory leaks across multiple languages.</p><div class="tags"><span>C/C++</span><span>Python</span><span>Security</span></div><a href="projects/16-keyless-memory-corruption-scanner/">View case study →</a></article>
-      </div>
-    </div>
-    <div class="category-section">
-      <h3 style="border-left: 5px solid #238636; padding-left: 15px; margin: 2rem 0 1rem 0; color: #0d3922;">Compliance & Audit <span style="color: #666; font-size: 0.9em;">(2)</span></h3>
-      <div class="grid">
-        <article class="card"><div class="card-number">15</div><h3>Security Audit & Threat Intelligence Dashboard</h3><p>Enterprise compliance tool supporting GDPR, HIPAA, PCI-DSS, ISO27001 audits with gap analysis.</p><div class="tags"><span>Flask</span><span>React</span><span>Compliance</span></div><a href="projects/15-security-audit-and-threat-intelligence-dashboard/">View case study →</a></article>
-        <article class="card"><div class="card-number">22</div><h3>Password Security Auditor</h3><p>Enterprise password auditing tool aligned with Kenya DPA compliance with entropy analysis and regulatory reporting.</p><div class="tags"><span>Flask</span><span>Python</span><span>GRC</span></div><a href="projects/22-password-security-auditor/">View case study →</a></article>
-      </div>
-    </div>
-    <div class="category-section">
-      <h3 style="border-left: 5px solid #238636; padding-left: 15px; margin: 2rem 0 1rem 0; color: #0d3922;">Governance, Risk & Compliance (GRC) <span style="color: #666; font-size: 0.9em;">(6)</span></h3>
-      <div class="grid">
-        <article class="card"><div class="card-number">25</div><h3>Risk Assessment Framework</h3><p>Probability × impact scoring matrix (1-25 scale) with mitigation tracking, Kenya DPA and CBK aligned.</p><div class="tags"><span>Risk Management</span><span>GRC</span><span>Compliance</span></div><a href="projects/25-risk-assessment-framework/">View case study →</a></article>
-        <article class="card"><div class="card-number">26</div><h3>Compliance Audit Checklist</h3><p>Audit framework for Kenya DPA, CBK, ISO 27001, CII standards with compliance scoring and evidence tracking.</p><div class="tags"><span>Compliance</span><span>Audit</span><span>GRC</span></div><a href="projects/26-compliance-audit-checklist/">View case study →</a></article>
-        <article class="card"><div class="card-number">27</div><h3>Incident Response Playbook</h3><p>Structured incident procedures for Data Breach, Malware, DDoS, Account Compromise with Kenya DPA 72-hour notification.</p><div class="tags"><span>Incident Response</span><span>GRC</span><span>Procedures</span></div><a href="projects/27-incident-response-playbook/">View case study →</a></article>
-        <article class="card"><div class="card-number">28</div><h3>GRC Metrics Dashboard</h3><p>Executive dashboard tracking compliance %, risk counts, MTTR, training completion, audit progress.</p><div class="tags"><span>Metrics</span><span>Executive Reporting</span><span>GRC</span></div><a href="projects/28-grc-metrics-dashboard/">View case study →</a></article>
-        <article class="card"><div class="card-number">29</div><h3>Security Policy Templates</h3><p>Production-ready policy library: Information Security, DPA, CBK, Password, Access Control pre-aligned policies.</p><div class="tags"><span>Policy</span><span>Governance</span><span>Templates</span></div><a href="projects/29-security-policy-templates/">View case study →</a></article>
-        <article class="card"><div class="card-number">30</div><h3>Audit Evidence System</h3><p>Centralized evidence repository with 8 evidence types, 12-month validity, gap analysis, JSON export.</p><div class="tags"><span>Evidence Management</span><span>Audit</span><span>GRC</span></div><a href="projects/30-audit-evidence-system/">View case study →</a></article>
-      </div>
-    </div>
-    <div class="category-section">
-      <h3 style="border-left: 5px solid #238636; padding-left: 15px; margin: 2rem 0 1rem 0; color: #0d3922;">Digital Forensics & Evidence Analysis <span style="color: #666; font-size: 0.9em;">(1)</span></h3>
-      <div class="grid">
-        <article class="card"><div class="card-number">31</div><h3>Digital Forensics Lab</h3><p>Linux disk/memory forensics with Volatility, timeline reconstruction via Sleuthkit, chain of custody logging.</p><div class="tags"><span>Forensics</span><span>Acquisition</span><span>Timeline</span></div><a href="projects/31-digital-forensics-lab/">View case study →</a></article>
-      </div>
-    </div>
-    <div class="category-section">
-      <h3 style="border-left: 5px solid #238636; padding-left: 15px; margin: 2rem 0 1rem 0; color: #0d3922;">Security Architecture & Design <span style="color: #666; font-size: 0.9em;">(1)</span></h3>
-      <div class="grid">
-        <article class="card"><div class="card-number">32</div><h3>Threat Modeling Suite</h3><p>STRIDE/PASTA threat modeling framework with DFD builder, automated threat analysis, risk assessment matrix.</p><div class="tags"><span>Architecture</span><span>STRIDE</span><span>Risk</span></div><a href="projects/32-threat-modeling-suite/">View case study →</a></article>
-      </div>
-    </div>
-    <div class="category-section">
-      <h3 style="border-left: 5px solid #238636; padding-left: 15px; margin: 2rem 0 1rem 0; color: #0d3922;">Purple Team Operations <span style="color: #666; font-size: 0.9em;">(1)</span></h3>
-      <div class="grid">
-        <article class="card"><div class="card-number">33</div><h3>Purple Team Exercise</h3><p>Red and blue team collaboration: multi-stage APT scenarios, detection engineering, incident response, post-incident analysis.</p><div class="tags"><span>PurpleTeam</span><span>Detection</span><span>Response</span></div><a href="projects/33-purple-team-exercise/">View case study →</a></article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section alt">
-  <div class="container narrow contact">
-    <p class="eyebrow">CONTACT</p>
-    <h2>Let's connect</h2>
-    <p>Open to professional connections and cybersecurity opportunities. Get in touch through email or connect with me online.</p>
-    <div class="contact-links">
-      <a href="https://github.com/Korir555" target="_blank" rel="noopener">GitHub ↗</a>
-      <a href="mailto:ekorir555@gmail.com">Email ↗</a>
-      <a href="https://www.linkedin.com/in/emmanuel-korir-a98b32229/" target="_blank" rel="noopener">LinkedIn ↗</a>
-    </div>
-  </div>
-</section>
-
+    <section class="hero">
+        <h1>Emmanuel Kibet Korir</h1>
+        <p class="tagline">Cybersecurity analyst building SOC operations, incident response, and threat intelligence expertise through hands-on labs and production-grade projects.</p>
+        <div class="hero-cta">
+            <a href="#featured" class="cta-btn primary">View Featured Projects</a>
+            <a href="#projects" class="cta-btn">Explore Portfolio</a>
+            <a href="mailto:ekorir555@gmail.com" class="cta-btn">Get In Touch</a>
         </div>
-</main>
+    </section>
 
-<footer><div class="container"><span>© 2026 Emmanuel Kibet Korir</span><span>Built for GitHub Pages</span></div></footer>
-<script src="assets/js/script.js"></script>
+    <section id="about">
+        <div class="container">
+            <h2>About</h2>
+            <div class="about-content">
+                <p><strong>BSc Cybersecurity & Digital Forensics</strong> (Open University of Kenya, expected 2028)</p>
+                <p>Junior cybersecurity practitioner focused on SOC operations, incident response, and GRC. Building hands-on experience through penetration testing labs, security tool development, and enterprise defense projects. Currently targeting roles in threat detection, compliance automation, and security architecture.</p>
+                
+                <h3>Experience & Focus</h3>
+                <ul style="margin-left: 20px;">
+                    <li><strong>SOC Operations:</strong> Wazuh SIEM deployment, alert correlation, incident response procedures</li>
+                    <li><strong>Incident Response:</strong> Simulator training, playbook development, forensic analysis fundamentals</li>
+                    <li><strong>Compliance & Governance:</strong> GDPR, HIPAA, PCI-DSS audit frameworks, risk assessment</li>
+                    <li><strong>Penetration Testing:</strong> Reconnaissance, vulnerability discovery, exploitation validation, remediation</li>
+                    <li><strong>Threat Intelligence:</strong> OSINT pipelines, phishing detection (ML), threat modeling (STRIDE/PASTA)</li>
+                </ul>
+                
+                <h3>Current Targets</h3>
+                <p>Safaricom SOC Analyst • Equity Bank Security Analyst • Security Engineer (any Tier 1–2 role)</p>
+                
+                <h3>Education</h3>
+                <p>Pursuing Security+ certification (exam target: mid-November). Active in AI/ML Club (Open University of Kenya).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Offensive Security</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Penetration Testing</span>
+                        <span class="skill-tag">Web Security</span>
+                        <span class="skill-tag">Reconnaissance</span>
+                        <span class="skill-tag">Exploitation</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h3>Defensive Security</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SOC Operations</span>
+                        <span class="skill-tag">SIEM</span>
+                        <span class="skill-tag">IDS/IPS</span>
+                        <span class="skill-tag">Threat Detection</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h3>Incident Response</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Forensics</span>
+                        <span class="skill-tag">Playbooks</span>
+                        <span class="skill-tag">Log Analysis</span>
+                        <span class="skill-tag">MITRE ATT&CK</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h3>Compliance & GRC</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GDPR</span>
+                        <span class="skill-tag">HIPAA</span>
+                        <span class="skill-tag">PCI-DSS</span>
+                        <span class="skill-tag">Risk Assessment</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Wazuh</span>
+                        <span class="skill-tag">Elasticsearch</span>
+                        <span class="skill-tag">Metasploit</span>
+                        <span class="skill-tag">Burp Suite</span>
+                        <span class="skill-tag">Nmap</span>
+                        <span class="skill-tag">Volatility</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h3>Programming & Scripting</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Flask</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <p class="section-desc">8 core projects demonstrating SOC operations, incident response, threat intelligence, and compliance expertise.</p>
+            
+            <div class="projects-grid">
+                <!-- Featured 1: Wazuh SIEM -->
+                <div class="project-card">
+                    <span class="featured-badge">★ Featured</span>
+                    <h3>#17: Wazuh SIEM Dashboard</h3>
+                    <div class="project-meta">Enterprise SIEM • Log Aggregation • Compliance Reporting</div>
+                    <p class="project-desc">Real-time threat detection and log aggregation for SOC operations. Integrated with Elasticsearch, MITRE ATT&CK mapping, automated alert correlation, and compliance scoring (GDPR, HIPAA, PCI-DSS). Production-ready deployment for enterprise security monitoring.</p>
+                    <div class="project-links">
+                        <a href="projects/17-wazuh-siem-dashboard/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/wazuh-siem-dashboard" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Featured 2: Incident Response Simulator -->
+                <div class="project-card">
+                    <span class="featured-badge">★ Featured</span>
+                    <h3>#07: Incident Response Simulator</h3>
+                    <div class="project-meta">SOC Training • MITRE ATT&CK • Decision Trees</div>
+                    <p class="project-desc">Interactive training platform for SOC analysts with realistic multi-stage incidents. Covers detection, triage, containment, eradication, recovery. Hands-on incident response procedure validation with performance metrics and playbook alignment.</p>
+                    <div class="project-links">
+                        <a href="projects/07-incident-response-simulator/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/incident-response-simulator" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Featured 3: Security Audit Dashboard -->
+                <div class="project-card">
+                    <span class="featured-badge">★ Featured</span>
+                    <h3>#15: Security Audit Dashboard</h3>
+                    <div class="project-meta">Compliance Framework • GDPR • HIPAA • PCI-DSS</div>
+                    <p class="project-desc">Enterprise compliance and audit framework for multi-standard validation (GDPR, HIPAA, PCI-DSS, ISO27001, CIS). Automated control validation, evidence collection, audit trail tracking, and executive compliance dashboards.</p>
+                    <div class="project-links">
+                        <a href="projects/15-security-audit-dashboard/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/security-audit-dashboard" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Featured 4: GRC Risk Assessment -->
+                <div class="project-card">
+                    <span class="featured-badge">★ Featured</span>
+                    <h3>#25: GRC Risk Assessment Framework</h3>
+                    <div class="project-meta">Risk Management • Governance • Compliance</div>
+                    <p class="project-desc">Governance, risk, and compliance framework for enterprise risk assessment and management. Risk scoring, control mapping, asset inventory, vulnerability correlation, and executive risk dashboards for C-suite reporting.</p>
+                    <div class="project-links">
+                        <a href="projects/25-grc-risk-assessment-framework/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/grc-risk-assessment-framework" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Featured 5: Phishing Detection Model -->
+                <div class="project-card">
+                    <span class="featured-badge">★ Featured</span>
+                    <h3>#08: Phishing Detection Model</h3>
+                    <div class="project-meta">Machine Learning • NLP • Threat Intelligence</div>
+                    <p class="project-desc">ML-powered email phishing classifier using ensemble models (Random Forest, SVM, Neural Networks). NLP feature extraction, email header analysis, SPF/DKIM/DMARC validation, threat intelligence integration, and active learning from analyst feedback.</p>
+                    <div class="project-links">
+                        <a href="projects/08-phishing-detection-model/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/phishing-detection-model" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Featured 6: Digital Forensics Lab -->
+                <div class="project-card">
+                    <span class="featured-badge">★ Featured</span>
+                    <h3>#31: Digital Forensics Lab</h3>
+                    <div class="project-meta">Forensics • Linux • Evidence Analysis</div>
+                    <p class="project-desc">Linux disk and memory forensics lab with Volatility and Sleuthkit. Chain of custody procedures, evidence integrity validation, artifact extraction, timeline reconstruction, Kenya Cybercrime Act alignment. Hands-on forensic analysis procedures.</p>
+                    <div class="project-links">
+                        <a href="projects/31-digital-forensics-lab/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/digital-forensics-lab" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Featured 7: Web App Security Scanner -->
+                <div class="project-card">
+                    <span class="featured-badge">★ Featured</span>
+                    <h3>#13: Web App Security Scanner</h3>
+                    <div class="project-meta">Penetration Testing • OWASP • Automated Scanning</div>
+                    <p class="project-desc">Automated OWASP Top 10 vulnerability scanner for web applications. SQL injection, XSS, CSRF, authentication bypass detection. Manual verification techniques, remediation guidance, CI/CD pipeline integration, comprehensive HTML/PDF reporting.</p>
+                    <div class="project-links">
+                        <a href="projects/13-webapp-security-scanner/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/webapp-security-scanner" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Featured 8: Threat Modeling Suite -->
+                <div class="project-card">
+                    <span class="featured-badge">★ Featured</span>
+                    <h3>#32: Threat Modeling Suite</h3>
+                    <div class="project-meta">Security Architecture • STRIDE • PASTA</div>
+                    <p class="project-desc">STRIDE and PASTA threat modeling tool with data flow diagram builder. Risk assessment matrix, threat tree generation, control recommendations, architecture review templates. Security-by-design validation for enterprise applications.</p>
+                    <div class="project-links">
+                        <a href="projects/32-threat-modeling-suite/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/threat-modeling-suite" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>All Projects</h2>
+            <p class="section-desc">25 additional labs and security tools covering red team, blue team, SIEM, threat intelligence, and GRC.</p>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="red">Red Team</button>
+                <button class="filter-btn" data-filter="blue">Blue Team</button>
+                <button class="filter-btn" data-filter="siem">SIEM</button>
+                <button class="filter-btn" data-filter="threat-intel">Threat Intel</button>
+                <button class="filter-btn" data-filter="tools">Security Tools</button>
+                <button class="filter-btn" data-filter="grc">GRC</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Red Team Labs -->
+                <div class="project-card" data-category="red">
+                    <h3>#01: Penetration Testing Lab</h3>
+                    <div class="project-meta">Red Team • VirtualBox Lab</div>
+                    <p class="project-desc">VirtualBox lab environment for hands-on penetration testing. Reconnaissance, vulnerability scanning, exploitation, privilege escalation practice.</p>
+                    <div class="project-links">
+                        <a href="projects/01-penetration-testing-lab/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/penetration-testing-lab" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="red">
+                    <h3>#02: White-Box Testing</h3>
+                    <div class="project-meta">Red Team • Static Analysis</div>
+                    <p class="project-desc">Static code analysis and white-box security testing. Command injection, SQL injection, LDAP injection vulnerability identification in source code.</p>
+                    <div class="project-links">
+                        <a href="projects/02-white-box-testing/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/white-box-testing" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="red">
+                    <h3>#03: Black-Box Testing</h3>
+                    <div class="project-meta">Red Team • Web Security</div>
+                    <p class="project-desc">Black-box web application security testing. Reconnaissance, vulnerability discovery, exploitation without source code access.</p>
+                    <div class="project-links">
+                        <a href="projects/03-black-box-testing/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/black-box-testing" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="red">
+                    <h3>#04: Linux Environment Review</h3>
+                    <div class="project-meta">Red Team • System Security</div>
+                    <p class="project-desc">Linux system security profiling. User/group enumeration, privilege analysis, sensitive file discovery, configuration review.</p>
+                    <div class="project-links">
+                        <a href="projects/04-linux-environment-review/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/linux-environment-review" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="red">
+                    <h3>#05: WordPress SQLi Assessment</h3>
+                    <div class="project-meta">Red Team • Web Vulnerability</div>
+                    <p class="project-desc">WordPress plugin vulnerability assessment. SQL injection exploitation, authentication bypass, privilege escalation validation.</p>
+                    <div class="project-links">
+                        <a href="projects/05-wordpress-sqli-assessment/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/wordpress-sqli-assessment" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="red">
+                    <h3>#06: DVWA XSS Assessment</h3>
+                    <div class="project-meta">Red Team • XSS Exploitation</div>
+                    <p class="project-desc">Damn Vulnerable Web Application XSS exploitation lab. Reflected, stored, and DOM-based XSS attack vectors and session hijacking.</p>
+                    <div class="project-links">
+                        <a href="projects/06-dvwa-xss-assessment/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/dvwa-xss-assessment" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="red">
+                    <h3>#09: Network Enumeration Lab</h3>
+                    <div class="project-meta">Red Team • Reconnaissance</div>
+                    <p class="project-desc">Network reconnaissance and service enumeration lab. Port scanning, service identification, vulnerability enumeration, topology mapping.</p>
+                    <div class="project-links">
+                        <a href="projects/09-network-enumeration-lab/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/network-enumeration-lab" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Blue Team Labs -->
+                <div class="project-card" data-category="blue">
+                    <h3>#12: IDS Detector</h3>
+                    <div class="project-meta">Blue Team • Intrusion Detection</div>
+                    <p class="project-desc">Intrusion detection system with signature-based and anomaly-based threat detection capabilities for network monitoring.</p>
+                    <div class="project-links">
+                        <a href="projects/12-ids-detector/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/ids-detector" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="blue">
+                    <h3>#19: Suricata IDS System</h3>
+                    <div class="project-meta">Blue Team • Network Detection</div>
+                    <p class="project-desc">Real-time network intrusion detection with signature-based and anomaly detection for DDoS, malware, port scans.</p>
+                    <div class="project-links">
+                        <a href="projects/19-suricata-ids-system/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/suricata-ids-system" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- SIEM & Monitoring -->
+                <div class="project-card" data-category="siem">
+                    <h3>#18: AWS Security Monitoring</h3>
+                    <div class="project-meta">Cloud SIEM • AWS Security</div>
+                    <p class="project-desc">AWS security monitoring for CloudTrail, IAM anomalies, and compliance validation in cloud infrastructure.</p>
+                    <div class="project-links">
+                        <a href="projects/18-aws-security-monitoring/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/aws-security-monitoring" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="siem">
+                    <h3>#23: SIEM Alert Correlation</h3>
+                    <div class="project-meta">SIEM • Alert Management</div>
+                    <p class="project-desc">Real-time security alert correlation and anomaly detection for SOC operations and incident triage.</p>
+                    <div class="project-links">
+                        <a href="projects/23-siem-alert-correlation/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/siem-alert-correlation" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Threat Intelligence -->
+                <div class="project-card" data-category="threat-intel">
+                    <h3>#14: DNS & Certificate Intelligence</h3>
+                    <div class="project-meta">OSINT • Threat Intel</div>
+                    <p class="project-desc">DNS enumeration and SSL/TLS certificate intelligence tool for domain reconnaissance and threat assessment.</p>
+                    <div class="project-links">
+                        <a href="projects/14-dns-cert-intel/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/dns-cert-intel" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="threat-intel">
+                    <h3>#20: Phishing Campaign Manager</h3>
+                    <div class="project-meta">Threat Intel • Email Security</div>
+                    <p class="project-desc">Simulated phishing campaign management platform with email template generation and click tracking.</p>
+                    <div class="project-links">
+                        <a href="projects/20-phishing-campaign-manager/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/phishing-campaign-manager" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="threat-intel">
+                    <h3>#24: OSINT Threat Intel Pipeline</h3>
+                    <div class="project-meta">Threat Intel • Intelligence Pipeline</div>
+                    <p class="project-desc">Open-source intelligence pipeline for threat intelligence aggregation and correlation across multiple sources.</p>
+                    <div class="project-links">
+                        <a href="projects/24-osint-threat-intel-pipeline/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/osint-threat-intel-pipeline" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Security Tools -->
+                <div class="project-card" data-category="tools">
+                    <h3>#10: Port Scanner</h3>
+                    <div class="project-meta">Tools • Network Scanning</div>
+                    <p class="project-desc">Multi-threaded network port scanning tool with service detection and OS fingerprinting capabilities.</p>
+                    <div class="project-links">
+                        <a href="projects/10-port-scanner/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/port-scanner" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="tools">
+                    <h3>#11: File Encryption Tool</h3>
+                    <div class="project-meta">Tools • Cryptography</div>
+                    <p class="project-desc">Production-grade file encryption using AES-256-GCM and RSA key exchange with authenticated encryption.</p>
+                    <div class="project-links">
+                        <a href="projects/11-file-encryption-tool/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/file-encryption-tool" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="tools">
+                    <h3>#16: Memory Corruption Scanner</h3>
+                    <div class="project-meta">Tools • Vulnerability Detection</div>
+                    <p class="project-desc">Memory safety vulnerability detection for C/C++/Python/Java including buffer overflow and use-after-free patterns.</p>
+                    <div class="project-links">
+                        <a href="projects/16-memory-corruption-scanner/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/memory-corruption-scanner" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="tools">
+                    <h3>#21: Fuzzing Vulnerability Discovery</h3>
+                    <div class="project-meta">Tools • Fuzzing</div>
+                    <p class="project-desc">Automated fuzzing framework for vulnerability discovery and exploitation validation in applications.</p>
+                    <div class="project-links">
+                        <a href="projects/21-fuzzing-vulnerability-discovery/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/fuzzing-vulnerability-discovery" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="tools">
+                    <h3>#22: Password Security Auditor</h3>
+                    <div class="project-meta">Tools • Compliance</div>
+                    <p class="project-desc">Password strength analysis and security auditing tool with dictionary and pattern-based vulnerability detection.</p>
+                    <div class="project-links">
+                        <a href="projects/22-password-security-auditor/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/password-security-auditor" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- GRC Projects -->
+                <div class="project-card" data-category="grc">
+                    <h3>#26: Compliance Audit Checklist</h3>
+                    <div class="project-meta">GRC • Compliance</div>
+                    <p class="project-desc">Compliance audit framework with automated control validation and evidence collection procedures.</p>
+                    <div class="project-links">
+                        <a href="projects/26-compliance-audit-checklist/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/compliance-audit-checklist" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="grc">
+                    <h3>#27: Incident Response Playbook</h3>
+                    <div class="project-meta">GRC • IR Procedures</div>
+                    <p class="project-desc">Standardized incident response playbook with procedures, escalation paths, and documentation templates.</p>
+                    <div class="project-links">
+                        <a href="projects/27-incident-response-playbook/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/incident-response-playbook" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="grc">
+                    <h3>#28: GRC Metrics Dashboard</h3>
+                    <div class="project-meta">GRC • Executive Reporting</div>
+                    <p class="project-desc">Executive dashboard for GRC metrics, KPIs, and compliance posture tracking for C-suite visibility.</p>
+                    <div class="project-links">
+                        <a href="projects/28-grc-metrics-dashboard/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/grc-metrics-dashboard" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="grc">
+                    <h3>#29: Security Policy Templates</h3>
+                    <div class="project-meta">GRC • Policies</div>
+                    <p class="project-desc">Enterprise security policy templates for access control, data protection, and incident response procedures.</p>
+                    <div class="project-links">
+                        <a href="projects/29-security-policy-templates/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/security-policy-templates" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="grc">
+                    <h3>#30: Audit Evidence System</h3>
+                    <div class="project-meta">GRC • Evidence Management</div>
+                    <p class="project-desc">Centralized audit evidence collection and management system for compliance reporting and audit trails.</p>
+                    <div class="project-links">
+                        <a href="projects/30-audit-evidence-system/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/audit-evidence-system" class="project-link">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="grc">
+                    <h3>#33: Purple Team Exercise</h3>
+                    <div class="project-meta">Red/Blue • Operations</div>
+                    <p class="project-desc">Red and blue team collaboration framework with multi-stage APT simulations and response procedures.</p>
+                    <div class="project-links">
+                        <a href="projects/33-purple-team-exercise/" class="project-link">Case Study</a>
+                        <a href="https://github.com/Korir555/purple-team-exercise" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="text-align: center;">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-desc">Open to opportunities in SOC operations, incident response, and security engineering.</p>
+            <div class="hero-cta" style="justify-content: center; margin-top: 30px;">
+                <a href="mailto:ekorir555@gmail.com" class="cta-btn primary">Email</a>
+                <a href="https://github.com/Korir555" class="cta-btn">GitHub</a>
+                <a href="https://www.linkedin.com/in/emmanuel-korir-a98b32229/" class="cta-btn">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Emmanuel Kibet Korir | Cybersecurity Portfolio | Open University of Kenya</p>
+        <p>Built with security-first mindset. All code production-ready.</p>
+    </footer>
+
+    <script>
+        // Category filtering
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter cards
+                document.querySelectorAll('.project-card[data-category]').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-        <article class="card"><div 
