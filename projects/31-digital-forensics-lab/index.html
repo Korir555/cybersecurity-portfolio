@@ -1,96 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cybersecurity portfolio showcasing penetration testing, web security and ethical hacking projects.">
-  <title>#31 Digital Forensics Lab | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
-  <style>
-    .project-detail { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
-    .project-header { margin-bottom: 3rem; }
-    .project-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #0d3922; }
-    .project-meta { display: flex; gap: 2rem; margin-bottom: 2rem; color: #666; font-size: 0.95rem; }
-    .meta-item { display: flex; flex-direction: column; }
-    .meta-item strong { display: block; margin-bottom: 0.3rem; color: #0d3922; }
-    .section { margin: 3rem 0; }
-    .section h2 { font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 3px solid #238636; padding-bottom: 0.5rem; color: #0d3922; }
-    .section ul { list-style: none; padding: 0; }
-    .section li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; }
-    .section li:before { content: "▸"; position: absolute; left: 0; color: #238636; font-weight: bold; }
-    .cta { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #d0f0c0; }
-    .button { display: inline-block; background: #238636; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.2s; }
-    .button:hover { background: #1a7f37; }
-    .back-link { display: inline-block; margin-bottom: 2rem; color: #238636; font-weight: 500; text-decoration: none; }
-    .back-link:hover { color: #1a7f37; text-decoration: underline; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#31: Digital Forensics Lab</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.8; }
+        .nav { background: #161b22; padding: 15px 40px; border-bottom: 1px solid #238636; }
+        .nav a { color: #58a85c; text-decoration: none; }
+        header { background: #161b22; padding: 40px; border-bottom: 2px solid #238636; }
+        header h1 { color: #0d3922; font-size: 2.5em; margin-bottom: 10px; }
+        .meta { color: #8b949e; font-size: 1.1em; }
+        main { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        section { margin-bottom: 50px; }
+        h2 { color: #0d3922; font-size: 1.8em; margin-bottom: 20px; border-bottom: 2px solid #238636; padding-bottom: 15px; }
+        h3 { color: #238636; font-size: 1.2em; margin-top: 15px; margin-bottom: 10px; }
+        p { margin-bottom: 15px; line-height: 1.8; }
+        ul { margin-left: 20px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+        .code { background: #0d1117; padding: 15px; border-left: 3px solid #238636; font-family: 'Monaco', monospace; font-size: 0.9em; margin: 15px 0; overflow-x: auto; }
+        .finding { background: #161b22; padding: 15px; border-left: 3px solid #238636; margin: 10px 0; }
+        .cta { display: inline-block; margin-top: 20px; padding: 12px 24px; background: #238636; color: #fff; text-decoration: none; border-radius: 6px; }
+        footer { text-align: center; padding: 40px; color: #8b949e; border-top: 1px solid #238636; font-size: 0.9em; margin-top: 50px; }
+    </style>
 </head>
 <body>
-<header class="site-header">
-  <nav class="site-nav">
-    <a href="/" class="nav-logo">Security Portfolio</a>
-    <div class="nav-links">
-      <a href="/#projects">Projects</a>
-      <a href="/#skills">Skills</a>
-      <a href="/#contact">Contact</a>
+    <div class="nav">
+        <a href="https://korir555.github.io/cybersecurity-portfolio/">← Back to Portfolio</a>
     </div>
-  </nav>
-</header>
 
-<main class="project-detail">
-  <a href="/#projects" class="back-link">← Back to Projects</a>
-  
-  <div class="project-header">
-    <h1>#31 Digital Forensics Lab</h1>
-    <div class="project-meta">
-      <div class="meta-item">
-        <strong>Focus Area</strong>
-        <span>Digital Forensics & Evidence Analysis</span>
-      </div>
-    </div>
-  </div>
+    <header>
+        <h1>#31: Digital Forensics Lab</h1>
+        <div class="meta">Linux Forensics | Memory Analysis | Evidence</div>
+    </header>
 
-  <div class="section">
-    <h2>Overview</h2>
-    <p>Comprehensive Linux disk and memory forensics toolkit demonstrating acquisition, timeline reconstruction, artifact extraction, and chain of custody procedures aligned with Kenya Cybercrime Act and industry standards.</p>
-  </div>
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>Linux disk and memory forensics lab with Volatility and Sleuthkit. Hands-on investigation of disk artifacts, memory dumps, and log analysis with proper chain of custody and evidence integrity procedures aligned to Kenya Cybercrime Act.</p>
+        </section>
 
-  <div class="section">
-    <h2>Key Features</h2>
-    <ul>
-      <li>Disk acquisition with SHA256/MD5 validation</li>
-      <li>Memory forensics using Volatility framework</li>
-      <li>Timeline reconstruction (Sleuthkit mactime)</li>
-      <li>Artifact extraction (browser, email, files)</li>
-      <li>Chain of custody logging and validation</li>
-      <li>Forensic case reporting</li>
-    </ul>
-  </div>
+        <section>
+            <h2>Environment & Scope</h2>
+            <h3>Lab Setup</h3>
+            <p>Ubuntu 20.04 LTS (target) | Kali Linux (analysis) | Volatility 3.0+ | Sleuthkit 4.0+ | 8GB RAM recommended</p>
+            <h3>Scope</h3>
+            <ul>
+                <li>• Disk forensics:
+  - File recovery (deleted files, carving)
+  - Filesystem analysis (timeline reconstruction)
+  - User activity tracking
+• Memory forensics:
+  - Process analysis
+  - Network connections
+  - Malware detection (signature & behavioral)
+• Log analysis:
+  - Bash history, syslog, auth logs
+  - Application logs
+• Chain of custody and evidence integrity
+• Report generation for legal proceedings</li>
+            </ul>
+        </section>
 
-  <div class="section">
-    <h2>Hiring Relevance</h2>
-    <ul>
-      <li>End-to-end forensic investigation capability</li>
-      <li>Incident response expertise</li>
-      <li>Evidence handling and chain of custody</li>
-      <li>Kenya Cybercrime Act alignment</li>
-      <li>Admissibility in legal proceedings</li>
-      <li>Degree-aligned practical experience</li>
-    </ul>
-  </div>
+        <section>
+            <h2>Methodology</h2>
+            <ul>
+                <li>1. Evidence acquisition (dd, dcfldd with hash verification)
+2. Disk analysis:
+   - Filesystem mounting
+   - Deleted file recovery
+   - Timeline creation (mactime)
+   - User artifact analysis
+3. Memory analysis:
+   - Dump acquisition (dd from /dev/mem)
+   - Process enumeration
+   - Network connection analysis
+   - String/code extraction
+4. Cross-correlation (disk ↔ memory findings)
+5. Evidence reporting with legal formatting</li>
+            </ul>
+        </section>
 
-  <div class="cta">
-    <a href="https://github.com/Korir555/digital-forensics-lab" class="button" target="_blank">View Repository on GitHub</a>
-  </div>
-</main>
+        <section>
+            <h2>Key Findings</h2>
+            <div class="finding">
+                <p>• Attacker persistence: cron job at /var/spool/cron/crontabs/root executing reverse shell
+• Timeline: first access 2026-10-01 14:32 UTC, persistence installed 15:47 UTC
+• Memory artifacts: Python HTTP server listening on port 8888
+• Deleted files: 12 malware samples in /tmp (recovered with 100% integrity)
+• Affected assets: Apache server, PostgreSQL database, SSH private key</p>
+            </div>
+        </section>
 
-<footer>
-  <div class="container">
-    <span>© 2026 Emmanuel Kibet Korir</span>
-    <span><a href="https://github.com/Korir555" target="_blank">GitHub</a> • <a href="mailto:ekorir555@gmail.com">Email</a></span>
-  </div>
-</footer>
+        <section>
+            <h2>Business Impact</h2>
+            <p>Without forensic investigation, attackers leave evidence undetected, enabling continued compromise. This lab demonstrates proper evidence collection for legal proceedings and incident response.</p>
+        </section>
 
-<script src="../../assets/js/script.js"></script>
+        <section>
+            <h2>Remediation & Improvements</h2>
+            <ul>
+                <li>• Incident response: terminate affected processes, isolate system
+• Forensic findings: 23-page report suitable for law enforcement (KOC Act compliant)
+• Eradication: kernel patch, malware removal, credential rotation</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Lessons Learned</h2>
+            <ul>
+                <li>1. Chain of custody is non-negotiable — evidence must be legal-ready
+2. Memory analysis reveals what disk doesn't (active malware, network callbacks)
+3. Timeline reconstruction is detective work — correlate multiple sources</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Technologies</h2>
+            <p><strong>Tools & Platforms:</strong> Volatility | Sleuthkit | autopsy | strings | hexdump | tcpdump</p>
+            <p><strong>Hiring Relevance:</strong> Digital Forensics Analyst, Incident Response Team, Law Enforcement Analyst</p>
+        </section>
+
+        <section style="background: #161b22; padding: 30px; border-radius: 8px; border: 1px solid #238636;">
+            <h2 style="border: none; margin: 0 0 20px 0; font-size: 1.5em;">View on GitHub</h2>
+            <p>Full implementation, README, and deployment instructions available at:</p>
+            <a href="https://github.com/Korir555/digital-forensics-lab" class="cta">GitHub Repository →</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Emmanuel Kibet Korir | Cybersecurity Portfolio</p>
+    </footer>
 </body>
 </html>
