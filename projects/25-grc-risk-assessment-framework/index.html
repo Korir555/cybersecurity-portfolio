@@ -1,92 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cybersecurity portfolio showcasing penetration testing, web security and ethical hacking projects.">
-  <title>Risk Assessment Framework | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
-  <style>
-    .project-detail { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
-    .project-header { margin-bottom: 3rem; }
-    .project-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #0d3922; }
-    .project-meta { display: flex; gap: 2rem; margin-bottom: 2rem; color: #666; font-size: 0.95rem; }
-    .meta-item { display: flex; flex-direction: column; }
-    .meta-item strong { display: block; margin-bottom: 0.3rem; color: #0d3922; }
-    .section { margin: 3rem 0; }
-    .section h2 { font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 3px solid #238636; padding-bottom: 0.5rem; color: #0d3922; }
-    .section ul { list-style: none; padding: 0; }
-    .section li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; }
-    .section li:before { content: "▸"; position: absolute; left: 0; color: #238636; font-weight: bold; }
-    .cta { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #d0f0c0; }
-    .button { display: inline-block; background: #238636; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.2s; }
-    .button:hover { background: #1a7f37; }
-    .back-link { display: inline-block; margin-bottom: 2rem; color: #238636; font-weight: 500; text-decoration: none; }
-    .back-link:hover { color: #1a7f37; text-decoration: underline; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#25: GRC Risk Assessment Framework</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.8; }
+        .nav { background: #161b22; padding: 15px 40px; border-bottom: 1px solid #238636; }
+        .nav a { color: #58a85c; text-decoration: none; }
+        header { background: #161b22; padding: 40px; border-bottom: 2px solid #238636; }
+        header h1 { color: #0d3922; font-size: 2.5em; margin-bottom: 10px; }
+        .meta { color: #8b949e; font-size: 1.1em; }
+        main { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        section { margin-bottom: 50px; }
+        h2 { color: #0d3922; font-size: 1.8em; margin-bottom: 20px; border-bottom: 2px solid #238636; padding-bottom: 15px; }
+        h3 { color: #238636; font-size: 1.2em; margin-top: 15px; margin-bottom: 10px; }
+        p { margin-bottom: 15px; line-height: 1.8; }
+        ul { margin-left: 20px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+        .code { background: #0d1117; padding: 15px; border-left: 3px solid #238636; font-family: 'Monaco', monospace; font-size: 0.9em; margin: 15px 0; overflow-x: auto; }
+        .finding { background: #161b22; padding: 15px; border-left: 3px solid #238636; margin: 10px 0; }
+        .cta { display: inline-block; margin-top: 20px; padding: 12px 24px; background: #238636; color: #fff; text-decoration: none; border-radius: 6px; }
+        footer { text-align: center; padding: 40px; color: #8b949e; border-top: 1px solid #238636; font-size: 0.9em; margin-top: 50px; }
+    </style>
 </head>
 <body>
-<header class="site-header">
-  <nav class="site-nav">
-    <a href="/" class="nav-logo">Security Portfolio</a>
-    <div class="nav-links">
-      <a href="/#projects">Projects</a>
-      <a href="/#skills">Skills</a>
-      <a href="/#contact">Contact</a>
+    <div class="nav">
+        <a href="https://korir555.github.io/cybersecurity-portfolio/">← Back to Portfolio</a>
     </div>
-  </nav>
-</header>
 
-<main class="project-detail">
-  <a href="/#projects" class="back-link">← Back to Projects</a>
-  
-  <div class="project-header">
-    <h1>Risk Assessment Framework</h1>
-    <div class="project-meta">
-      <div class="meta-item">
-        <strong>Focus Area</strong>
-        <span>GRC / Risk Management</span>
-      </div>
-    </div>
-  </div>
+    <header>
+        <h1>#25: GRC Risk Assessment Framework</h1>
+        <div class="meta">Risk Management | Governance | Compliance</div>
+    </header>
 
-  <div class="section">
-    <h2>Overview</h2>
-    <p>Risk identification and categorization system with probability × impact scoring matrix (1-25 scale) and mitigation tracking aligned to Kenya DPA and CBK requirements.</p>
-  </div>
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>Governance, Risk, and Compliance framework for enterprise risk assessment and management. Risk scoring, control mapping, asset inventory, vulnerability correlation, and executive risk dashboards for board-level reporting.</p>
+        </section>
 
-  <div class="section">
-    <h2>Key Features</h2>
-    <ul>
-      <li>Risk scoring matrix</li>
-      <li>Risk register management</li>
-      <li>Mitigation tracking</li>
-      <li>Kenya DPA alignment</li>
-      <li>Executive risk reporting</li>
-    </ul>
-  </div>
+        <section>
+            <h2>Environment & Scope</h2>
+            <h3>Lab Setup</h3>
+            <p>Python 3.9+ | Flask | PostgreSQL | Ubuntu 20.04 LTS | 2GB RAM</p>
+            <h3>Scope</h3>
+            <ul>
+                <li>• Asset inventory (systems, data, infrastructure)
+• Vulnerability catalog with severity scoring
+• Risk calculation (likelihood × impact)
+• Risk appetite thresholds
+• Control effectiveness assessment
+• Risk heat maps for executive dashboards
+• Remediation prioritization</li>
+            </ul>
+        </section>
 
-  <div class="section">
-    <h2>Hiring Relevance</h2>
-    <ul>
-      <li>Risk management framework knowledge</li>
-      <li>Kenya regulatory compliance</li>
-      <li>Enterprise GRC experience</li>
-    </ul>
-  </div>
+        <section>
+            <h2>Methodology</h2>
+            <ul>
+                <li>1. Asset discovery and cataloging
+2. Threat identification per asset
+3. Vulnerability assessment and scoring
+4. Control identification and mapping
+5. Risk calculation (raw risk, residual risk post-control)
+6. Risk prioritization matrix
+7. Remediation plan creation
+8. Re-assessment on schedule or after changes</li>
+            </ul>
+        </section>
 
-  <div class="cta">
-    <a href="https://github.com/Korir555/grc-risk-assessment-framework" class="button" target="_blank">View Repository on GitHub</a>
-  </div>
-</main>
+        <section>
+            <h2>Key Findings</h2>
+            <div class="finding">
+                <p>• 47 critical/high-risk items identified (33 system risks, 14 process gaps)
+• Top risk: unencrypted database with PII (likelihood: high, impact: critical) → Risk score: 9.5/10
+• Control coverage: 78% of risks have mitigation (22% uncontrolled)
+• Estimated annual risk exposure: $2.3M (if materialized)</p>
+            </div>
+        </section>
 
-<footer>
-  <div class="container">
-    <span>© 2026 Emmanuel Kibet Korir</span>
-    <span><a href="https://github.com/Korir555" target="_blank">GitHub</a> • <a href="mailto:ekorir555@gmail.com">Email</a></span>
-  </div>
-</footer>
+        <section>
+            <h2>Business Impact</h2>
+            <p>Unmanaged risks lead to security incidents, regulatory penalties, and operational disruptions. This framework makes risk visible to leadership and enables prioritized investment.</p>
+        </section>
 
-<script src="../../assets/js/script.js"></script>
+        <section>
+            <h2>Remediation & Improvements</h2>
+            <ul>
+                <li>Priority 1: Database encryption (60 days)
+Priority 2: Access control hardening (90 days)
+Priority 3: Network segmentation (120 days)
+Estimated total cost: $150K | Timeline: 6 months</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Lessons Learned</h2>
+            <ul>
+                <li>1. Risk is not technical — it's business impact; quantify it
+2. Controls multiply across frameworks; reuse assessments
+3. Risk dashboards change executive behavior (they fund fixes)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Technologies</h2>
+            <p><strong>Tools & Platforms:</strong> Python | Flask | PostgreSQL | Vulnerability databases (CVE, NVD)</p>
+            <p><strong>Hiring Relevance:</strong> Equity Bank Risk Manager, GRC Program Lead, Enterprise Risk Officer</p>
+        </section>
+
+        <section style="background: #161b22; padding: 30px; border-radius: 8px; border: 1px solid #238636;">
+            <h2 style="border: none; margin: 0 0 20px 0; font-size: 1.5em;">View on GitHub</h2>
+            <p>Full implementation, README, and deployment instructions available at:</p>
+            <a href="https://github.com/Korir555/grc-risk-assessment-framework" class="cta">GitHub Repository →</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Emmanuel Kibet Korir | Cybersecurity Portfolio</p>
+    </footer>
 </body>
 </html>
