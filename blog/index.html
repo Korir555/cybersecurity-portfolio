@@ -2,56 +2,39 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog - Emmanuel Kibet Korir</title>
 <style>
-body{font-family: "Courier New", Consolas, monospace;background:#000000;color:#b8ffb8;line-height:1.7;margin:0}
+body{font-family: "Courier New", Consolas, monospace;background:#05060a;color:#d7dbe8;line-height:1.7;margin:0}
 .wrap{max-width:760px;margin:0 auto;padding:48px 20px}
-a{color:#00ff41}
-h1{font-family: "Courier New", Consolas, monospace;color:#00ff41}
-li{color:#66c266;margin-bottom:10px}
+a{color:#b3ff00}
+h1{font-family: "Courier New", Consolas, monospace;color:#b3ff00}
+li{color:#8f98b8;margin-bottom:10px}
 
-        h1, h2, h3 { text-shadow: 0 0 6px rgba(0, 255, 65, 0.45); }
-        h2::before { content: '$ '; color: #00ff41; }
-        body { background: #000 !important; }
+        h1, h2, h3 { text-shadow: 0 0 6px rgba(179, 255, 0, 0.45); }
+        h2::before { content: '$ '; color: #b3ff00; }
+        body { background: #05060a !important; }
     
-        /* Red accents */
-        h2::before { color: #ff3b3b !important; text-shadow: 0 0 6px rgba(255, 59, 59, 0.5); }
-        a:hover { color: #ff3b3b !important; }
-        .project-card:hover, .skill-category:hover, .post-card:hover { border-color: #ff3b3b !important; }
-        .filter-btn:hover, .filter-btn.active { background: #ff3b3b !important; border-color: #ff3b3b !important; color: #000 !important; }
-    
-        /* Colourful palette (no blue) */
-        h1 { color: #39ff88 !important; text-shadow: 0 0 10px rgba(57,255,136,0.45) !important; }
-        h2 { color: #ffb020 !important; border-bottom-color: #ffb020 !important; }
-        h2::before { color: #ff4d6d !important; text-shadow: 0 0 6px rgba(255,77,109,0.5); }
-        h3 { color: #ffe066 !important; }
-        #skills h2 { color: #39ff88 !important; border-bottom-color: #39ff88 !important; }
-        #projects h2 { color: #ffb020 !important; border-bottom-color: #ffb020 !important; }
-        #all-projects h2 { color: #ff5ec4 !important; border-bottom-color: #ff5ec4 !important; }
-        #resources h2 { color: #ff8c42 !important; border-bottom-color: #ff8c42 !important; }
-        #contact h2 { color: #39ff88 !important; border-bottom-color: #39ff88 !important; }
-        .hero { background: linear-gradient(135deg, rgba(57,255,136,0.08), rgba(255,77,109,0.08), rgba(255,176,32,0.06)) !important; }
-        .project-card[data-category="red-team"] .project-header,
-        .post-card[data-category="web-security"] .post-header { background: linear-gradient(90deg, #ff4d6d, rgba(255,77,109,0.5)) !important; }
-        .project-card[data-category="blue-team"] .project-header { background: linear-gradient(90deg, #39ff88, rgba(57,255,136,0.5)) !important; }
-        .project-card[data-category="siem"] .project-header,
-        .post-card[data-category="siem"] .post-header { background: linear-gradient(90deg, #ffb020, rgba(255,176,32,0.5)) !important; }
-        .project-card[data-category="threat-intel"] .project-header,
-        .project-card[data-category="purple-team"] .project-header { background: linear-gradient(90deg, #ff5ec4, rgba(255,94,196,0.5)) !important; }
-        .project-card[data-category="tools"] .project-header { background: linear-gradient(90deg, #ff8c42, rgba(255,140,66,0.5)) !important; }
-        .project-card[data-category="grc"] .project-header,
-        .post-card[data-category="compliance"] .post-header { background: linear-gradient(90deg, #ffe066, rgba(255,224,102,0.5)) !important; }
-        .tech-tag { border-color: #ffb020 !important; color: #ffb020 !important; }
-        .tech-tag:hover { background: rgba(255,176,32,0.12) !important; }
-        .filter-btn { border-color: #ff5ec4 !important; color: #ff5ec4 !important; }
-        .filter-btn:hover, .filter-btn.active { background: #ff5ec4 !important; border-color: #ff5ec4 !important; color: #000 !important; }
-        .resource-card { border-top-color: #ff8c42 !important; }
-        .resource-card a, .project-link, .post-link, .btn { background: #39ff88 !important; color: #000 !important; }
-        .resource-card a:hover, .project-link:hover, .post-link:hover { background: #ffb020 !important; }
-        footer a, a { text-decoration-color: rgba(255,176,32,0.5); }
+        
+        /* Palette: midnight black, cobalt blue, acid lime (no banners or badges) */
+        body { background: #05060a !important; color: #d7dbe8 !important; }
+        .hero { background: linear-gradient(135deg, rgba(0,71,171,0.12), rgba(179,255,0,0.04)) !important; }
+        h1 { color: #b3ff00 !important; text-shadow: 0 0 10px rgba(179,255,0,0.35) !important; }
+        h2 { color: #3a7bff !important; border-bottom-color: #0047ab !important; }
+        h2::before { color: #b3ff00 !important; text-shadow: 0 0 6px rgba(179,255,0,0.4) !important; }
+        h3 { color: #b3ff00 !important; }
+        .project-card, .skill-category, .post-card, .resource-card { background: #0a0d16 !important; border-color: #0047ab !important; }
+        .project-card:hover, .skill-category:hover, .post-card:hover, .resource-card:hover { border-color: #b3ff00 !important; }
+        .project-card[data-category] .project-header, .post-card .post-header { background: linear-gradient(90deg, #0047ab, #b3ff00) !important; }
+        .tech-tag { border-color: #3a7bff !important; color: #3a7bff !important; }
+        .filter-btn { border-color: #b3ff00 !important; color: #b3ff00 !important; }
+        .filter-btn:hover, .filter-btn.active { background: #b3ff00 !important; border-color: #b3ff00 !important; color: #000 !important; }
+        .resource-card a, .project-link, .post-link, .btn { background: #b3ff00 !important; color: #000 !important; }
+        .resource-card a:hover, .project-link:hover, .post-link:hover { background: #3a7bff !important; color: #fff !important; }
+        a:hover { color: #b3ff00 !important; }
+        a:focus-visible, button:focus-visible { outline-color: #b3ff00 !important; }
     </style></head>
 <body><main class="wrap">
 <p><a href="../">&larr; Back to Portfolio</a></p>
 <h1>Blog</h1>
-<p style="color:#66c266">Lab notes and write-ups from my cybersecurity practice. More posts will be added as they are written.</p>
+<p style="color:#8f98b8">Lab notes and write-ups from my cybersecurity practice. More posts will be added as they are written.</p>
 <ul>
 <li><a href="2026/wazuh-siem-setup/">Wazuh SIEM Lab Notes: Deploying a Manager, Agents, and a First Detection Rule</a></li>
 </ul>
